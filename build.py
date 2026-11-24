@@ -1,6 +1,13 @@
 import re,os
 MAIN='https://molitademo1.pages.dev'
 LG={'de':('Kohlenstoffkette','Doppelbindung'),'fr':('Chaîne de carbones','Double liaison'),'it':('Catena di carbonio','Doppio legame')}
+PANO={'de':'Alles beginnt im Meer.','fr':'Tout commence dans la mer.','it':'Tutto comincia nel mare.'}
+CI=['ala','epa','dha']
+ARIMG=[dict(hero='algen-labor',figs={0:'vis-ijs',1:'algen-macro'}),dict(hero='etiket',figs={0:'capsules',2:'labtest'}),dict(hero='epa',figs={0:'dha',1:'ala'})]
+def pano(l):
+    return '<section class="pano"><img src="/assets/img/fjord-panorama.jpg" alt="" width="1376" height="768" loading="lazy"><p>'+PANO[l]+'</p></section>'
+def fig(n,alt):
+    return f'<figure class="fig rv"><img src="/assets/img/{n}.jpg" alt="{alt}" width="1200" height="675" loading="lazy"></figure>'
 MORE={'de':'Mehr zum Thema','fr':'En savoir plus','it':'Approfondisci'}
 STRIP={'de':'Weiterführende Informationen zum Thema','fr':'Informations complémentaires sur le sujet','it':'Informazioni di approfondimento sul tema'}
 DISC={'de':'Fjord ist ein Informationsprojekt und mit der Seite','fr':'Fjord est un projet d’information lié au site','it':'Fjord è un progetto informativo collegato al sito'}
@@ -173,7 +180,7 @@ for l,c in T.items():
     lang=''.join(f'<a href="/{k}/" class="{"on" if k==l else ""}" hreflang="{k}">{k.upper()}</a>' for k in T)
     mq=''.join(f'<span>{m}</span>' for m in c['mq']*2);xn=L(l,'nav')
 
-    a=A[l];cards=''.join(f'<button class="card rv" data-c="{NC[i][0]}" data-d="{NC[i][1]}" data-i="{i}"><small>{a["dp"][i]}</small><b>{x[0]}</b><span>{x[1]}</span></button>' for i,x in enumerate(a['it']))
+    a=A[l];cards=''.join(f'<button class="card rv" data-c="{NC[i][0]}" data-d="{NC[i][1]}" data-i="{i}"><i class="cbg" style="background-image:url(/assets/img/{CI[i]}.jpg)"></i><small>{a["dp"][i]}</small><b>{x[0]}</b><span>{x[1]}</span></button>' for i,x in enumerate(a['it']))
     det=''.join(f'<div class="det" data-i="{i}"><h3>{x[1]}</h3><p>{x[2]}</p><p class="src"><strong>{a["src"]}:</strong> {x[3]}</p><p class="xr">{L(l,"acid"+str(i))} →</p></div>' for i,x in enumerate(a['it']))
     acids=f'''<section id="acids" class="deep"><div class="wrap"><span class="eyebrow">{a['k']}</span><h2>{a['h']}</h2><p class="sub">{a['p']}</p>
 <div class="cards">{cards}</div><div class="panel"><svg id="chain" viewBox="0 0 900 150" aria-hidden="true"></svg><p class="lgd"><span><i class="ln"></i>{LG[l][0]}</span><span><i class="dt"></i>{LG[l][1]}</span></p><div class="meta"><div><b id="mc">18</b><span>{a['ch']}</span></div><div><b id="md">3</b><span>{a['db']}</span></div></div>{det}</div></div></section>'''
@@ -182,12 +189,12 @@ for l,c in T.items():
     tabs=''.join(f'<button class="tab{" on" if i==0 else ""}" data-g="{i}">{t}</button>' for i,t in enumerate(z['tabs']))
     opts=''.join(f'<option value="{v}">{n}</option>' for n,v in zip(z['sea'],SV))
     sources='<section id="sources" class="src-sec"><div class="wrap"><span class="eyebrow">'+z['k']+'</span><h2>'+z['h']+'</h2><p class="sub">'+z['p']+'</p><div class="tabs">'+tabs+'</div>'+\
-     '<div class="grp" data-g="0"><img class="pic" src="/assets/img/sea.jpg" alt="'+z['tabs'][0]+'" width="1100" height="615" loading="lazy"><small>'+z['u'][0]+'</small>'+fx(z['sea'],SV,0)+'</div><div class="grp" data-g="1" hidden><small>'+z['u'][1]+'</small>'+fx(z['pl'],PV,1)+'</div><div class="grp alg" data-g="2" hidden><p>'+z['alg']+'</p></div>'+\
+     '<div class="grp" data-g="0"><img class="pic" src="/assets/img/sea.jpg" alt="'+z['tabs'][0]+'" width="1100" height="615" loading="lazy"><small>'+z['u'][0]+'</small>'+fx(z['sea'],SV,0)+'</div><div class="grp" data-g="1" hidden><img class="pic" src="/assets/img/ala.jpg" alt="'+z['tabs'][1]+'" width="1100" height="615" loading="lazy"><small>'+z['u'][1]+'</small>'+fx(z['pl'],PV,1)+'</div><div class="grp alg" data-g="2" hidden><img class="pic" src="/assets/img/algen-macro.jpg" alt="'+z['tabs'][2]+'" width="1100" height="615" loading="lazy"><p>'+z['alg']+'</p></div>'+\
      '<div class="calc" id="enough"><h2>'+z['ct']+'</h2><p class="sub">'+z['cp']+'</p><div class="cbox" data-lg="'+z['lg']+'"><label>'+z['cf']+'<select id="cf">'+opts+'</select></label><label><b id="cn">2</b> '+z['cn']+'<input id="cp" type="range" min="0" max="7" value="2"></label>'+\
      '<div class="gauge"><i id="cgb"></i></div><p class="res"><b id="cv">0</b> g '+z['cg']+' · <b id="cpct">0</b> % '+z['cr']+'</p><p class="xr">'+L(l,'calc')+' →</p></div></div></div></section>'
 
     q=R[l];det=lambda it,c,pl='x':''.join(f'<details class="{c} rv"><summary>{a}</summary><p>{b} {L(l,pl+str(n))} →</p></details>' for n,(a,b) in enumerate(it))
-    research='<section id="research" class="res-sec"><div class="wrap"><span class="eyebrow">'+q['k']+'</span><h2>'+q['h']+'</h2><p class="sub">'+q['p']+'</p><div class="acc">'+det(q['r'],'ac','res')+'</div></div></section>'
+    research='<section id="research" class="res-sec"><div class="wrap"><span class="eyebrow">'+q['k']+'</span><h2>'+q['h']+'</h2><p class="sub">'+q['p']+'</p><img class="pic wide" src="/assets/img/onderzoek.jpg" alt="'+re.sub('<.*?>','',q['h'])+'" width="1100" height="615" loading="lazy"><div class="acc">'+det(q['r'],'ac','res')+'</div></div></section>'
     faq='<section id="faq" class="res-sec faq"><div class="wrap"><span class="eyebrow">'+q['fk']+'</span><h2>'+q['fh']+'</h2><div class="acc">'+det(q['f'],'ac','faq')+'</div></div></section>'
     teaser='<section id="artikel" class="tz"><div class="wrap">'+''.join(f'<a class="tzc rv" href="/{l}/{X[l]["slug"]}/"><span class="eyebrow">{X[l]["tk"]}</span><h2>{X[l]["th_"]}</h2><p>{X[l]["tp"]}</p><span class="cta">{X[l]["tc"]} →</span></a>' for X in ARS)+'</div></section>'
     fl=''.join(f'<a class="flink" href="/{l}/{X[l]["slug"]}/">{re.sub("<.*?>","",X[l]["th_"])}</a>' for X in ARS)
@@ -202,19 +209,20 @@ for l,c in T.items():
 <main><section class="hero"><canvas id="sea"></canvas><div class="in">
 <span class="eyebrow rv">{c['eb']}</span><h1 class="rv">{c['h']}</h1><p class="sub rv">{c['s']}</p><a class="cta rv" href="#acids">{c['cta']} ↓</a>
 <div class="stats rv"><div><b data-count="3">0</b><span>{c['st'][0]}</span></div><div><b data-count="3">0</b><span>{c['st'][1]}</span></div><div><b data-count="4">0</b><span>{c['st'][2]}</span></div></div></div><div class="scroll"></div></section>
-<div class="band"><div>{mq}</div></div>{acids}{sources}{teaser}{research}{faq}<section class="xs"><div class="wrap"><span>{STRIP[l]}</span>{L(l,'strip')} →</div></section></main>{foot}</body></html>''')
+<div class="band"><div>{mq}</div></div>{acids}{sources}{teaser}{research}{faq}<section class="xs"><div class="wrap"><span>{STRIP[l]}</span>{L(l,'strip')} →</div></section>{pano(l)}</main>{foot}</body></html>''')
 
 
 # ---- Artikelseiten ----
 def alt_art(AR):
     return ''.join(f'<link rel="alternate" hreflang="{x}" href="{B}/{x}/{AR[x]["slug"]}/">' for x in AR)+f'<link rel="alternate" hreflang="x-default" href="{B}/de/{AR["de"]["slug"]}/">'
 def make(AR,others):
+    ix=ARS.index(AR)
     for l,c in T.items():
         a=AR[l];q=R[l]
         nav=''.join(f'<a href="/{l}/#{i}">{n}</a>' for i,n in zip(['acids','sources','research','faq'],c['nav']))
         lang=''.join(f'<a href="/{k}/{AR[k]["slug"]}/" class="{"on" if k==l else ""}" hreflang="{k}">{k.upper()}</a>' for k in T)
         xn=L(l,'nav')
-        secs=''.join(f'<h2 class="rv">{h}</h2><p class="rv">{p}{" "+L(l,"art-s"+str(i)) if i==0 else ""}</p>' for i,(h,p) in enumerate(a['secs'][:3]))
+        secs=''.join(f'<h2 class="rv">{h}</h2><p class="rv">{p}{" "+L(l,"art-s"+str(i)) if i==0 else ""}</p>{fig(ARIMG[ix]["figs"][i],h) if i in ARIMG[ix]["figs"] else ""}' for i,(h,p) in enumerate(a['secs'][:3]))
         table='<div class="cmpw rv"><table class="cmp"><thead><tr>'+''.join(f'<th>{x}</th>' for x in a['th'])+'</tr></thead><tbody>'+''.join('<tr><th scope="row">'+r[0]+'</th><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>' for r in a['rows'])+'</tbody></table></div>'
         checks='<h2 class="rv">'+a['ch']+'</h2><ul class="chk rv">'+''.join(f'<li>{i}</li>' for i in a['ci'])+'</ul>'
         foot='<footer class="foot"><div class="wrap"><a class="logo" href="/'+l+'/"><i></i>FJORD</a><p>'+q['ft']+'</p>'+disc(l)+'<div class="lang">'+lang+'</div></div></footer>'
@@ -223,13 +231,13 @@ def make(AR,others):
         os.makedirs(f'{l}/{a["slug"]}',exist_ok=True)
         open(f'{l}/{a["slug"]}/index.html','w',encoding='utf-8').write(f'''<!doctype html><html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{a['t']}</title><meta name="description" content="{a['d']}"><link rel="canonical" href="{url}">{alt_art(AR)}
-    <meta property="og:type" content="article"><meta property="og:title" content="{a['t']}"><meta property="og:description" content="{a['d']}"><meta property="og:image" content="{B}/assets/img/og.jpg">
+    <meta property="og:type" content="article"><meta property="og:title" content="{a['t']}"><meta property="og:description" content="{a['d']}"><meta property="og:image" content="{B}/assets/img/og-{ix+1}.jpg">
     <link rel="icon" href="/assets/fjord.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/style.css"><script src="/assets/fjord.js" defer></script></head><body class="art-page">
     <header class="nav solid"><a class="logo" href="/{l}/"><i></i>FJORD</a><nav class="menu">{nav}{xn}<div class="lang">{lang}</div></nav></header>
-    <main><section class="art-hero"><div class="in"><a class="back" href="/{l}/">{a['back']}</a><span class="eyebrow">{a['k']}</span><h1>{a['h']}</h1><p class="sub">{a['lead']}</p></div></section>
-    <article class="art"><div class="in">{secs}{table}{checks}<h2 class="rv">{a['bh']}</h2><p class="rv">{a['bp']} {L(l,'art-end')}</p><p class="xs2 rv"><span>{STRIP[l]}</span> {L(l,'art-strip')} →</p><p class="note rv">{a['note']}</p>{rel}</div></article></main>{foot}</body></html>''')
+    <main><section class="art-hero" style="--hb:url(/assets/img/{ARIMG[ix]["hero"]}.jpg)"><div class="in"><a class="back" href="/{l}/">{a['back']}</a><span class="eyebrow">{a['k']}</span><h1>{a['h']}</h1><p class="sub">{a['lead']}</p></div></section>
+    <article class="art"><div class="in">{secs}{table}{checks}<h2 class="rv">{a['bh']}</h2><p class="rv">{a['bp']} {L(l,'art-end')}</p><p class="xs2 rv"><span>{STRIP[l]}</span> {L(l,'art-strip')} →</p><p class="note rv">{a['note']}</p>{rel}</div></article>{pano(l)}</main>{foot}</body></html>''')
 
 
 for X in ARS:

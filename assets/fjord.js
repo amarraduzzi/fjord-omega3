@@ -11,8 +11,8 @@ P.forEach(p=>{p.y-=p.v*(1+(.5-my)*.8);p.x+=Math.sin(t*2+p.a)*.35+(mx-.5)*.5;if(p
 const g=x.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*5);const col=p.g?'240,192,96':'63,208,201';g.addColorStop(0,`rgba(${col},.9)`);g.addColorStop(1,`rgba(${col},0)`);x.fillStyle=g;x.beginPath();x.arc(p.x,p.y,p.r*5,0,6.28);x.fill()});
 requestAnimationFrame(L)})()})();
 (()=>{const cs=[...document.querySelectorAll('.card')];if(!cs.length)return;const ch=document.getElementById('chain'),N='http://www.w3.org/2000/svg';
-const sel=c=>{cs.forEach(k=>k.classList.toggle('on',k===c));document.querySelectorAll('.det').forEach(d=>d.classList.toggle('on',d.dataset.i===c.dataset.i));
-const n=+c.dataset.c,db=+c.dataset.d;document.getElementById('mc').textContent=n;document.getElementById('md').textContent=db;
+const sel=c=>{cs.forEach(k=>k.classList.toggle('sel',k===c));document.querySelectorAll('.det').forEach(d=>d.classList.toggle('on',d.dataset.i===c.dataset.i));
+const pn=document.querySelector('.panel'),r1=c.getBoundingClientRect(),r2=pn.getBoundingClientRect();pn.style.setProperty('--ax',(r1.left+r1.width/2-r2.left)+'px');const n=+c.dataset.c,db=+c.dataset.d;document.getElementById('mc').textContent=n;document.getElementById('md').textContent=db;
 const st=820/(n-1),pts=Array.from({length:n},(_,i)=>[40+i*st,i%2?40:105]);
 ch.innerHTML='';const p=document.createElementNS(N,'path');p.setAttribute('d','M'+pts.map(q=>q.join(',')).join('L'));ch.appendChild(p);
 let L=0;for(let i=1;i<n;i++)L+=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);p.style.setProperty('--L',L);

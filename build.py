@@ -1,5 +1,6 @@
 import re,os
 MAIN='https://molitademo1.pages.dev'
+LG={'de':('Kohlenstoffkette','Doppelbindung'),'fr':('Chaîne de carbones','Double liaison'),'it':('Catena di carbonio','Doppio legame')}
 MORE={'de':'Mehr zum Thema','fr':'En savoir plus','it':'Approfondisci'}
 STRIP={'de':'Weiterführende Informationen zum Thema','fr':'Informations complémentaires sur le sujet','it':'Informazioni di approfondimento sul tema'}
 DISC={'de':'Fjord ist ein Informationsprojekt und mit der Seite','fr':'Fjord est un projet d’information lié au site','it':'Fjord è un progetto informativo collegato al sito'}
@@ -144,7 +145,7 @@ for l,c in T.items():
     a=A[l];cards=''.join(f'<button class="card rv" data-c="{NC[i][0]}" data-d="{NC[i][1]}" data-i="{i}"><small>{a["dp"][i]}</small><b>{x[0]}</b><span>{x[1]}</span></button>' for i,x in enumerate(a['it']))
     det=''.join(f'<div class="det" data-i="{i}"><h3>{x[1]}</h3><p>{x[2]}</p><p class="src"><strong>{a["src"]}:</strong> {x[3]}</p><p class="xr">{L(l,"acid"+str(i))} →</p></div>' for i,x in enumerate(a['it']))
     acids=f'''<section id="acids" class="deep"><div class="wrap"><span class="eyebrow">{a['k']}</span><h2>{a['h']}</h2><p class="sub">{a['p']}</p>
-<div class="cards">{cards}</div><div class="panel"><svg id="chain" viewBox="0 0 900 150" aria-hidden="true"></svg><div class="meta"><div><b id="mc">18</b><span>{a['ch']}</span></div><div><b id="md">3</b><span>{a['db']}</span></div></div>{det}</div></div></section>'''
+<div class="cards">{cards}</div><div class="panel"><svg id="chain" viewBox="0 0 900 150" aria-hidden="true"></svg><p class="lgd"><span><i class="ln"></i>{LG[l][0]}</span><span><i class="dt"></i>{LG[l][1]}</span></p><div class="meta"><div><b id="mc">18</b><span>{a['ch']}</span></div><div><b id="md">3</b><span>{a['db']}</span></div></div>{det}</div></div></section>'''
 
     z=S[l];fx=lambda names,vals,g:''.join(f'<div class="fx rv" data-g="{g}"><span>{n}</span><i style="--w:{v/max(vals)*100:.0f}%"></i><em>{str(v).replace(".",",") if l!="de" else v}</em></div>' for n,v in zip(names,vals))
     tabs=''.join(f'<button class="tab{" on" if i==0 else ""}" data-g="{i}">{t}</button>' for i,t in enumerate(z['tabs']))

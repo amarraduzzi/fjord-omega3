@@ -1,6 +1,6 @@
-T={'de':dict(t='Fjord – Omega-3, tief erklärt',d='Unabhängiges Wissen über Omega-3-Fettsäuren: was sie sind, wo sie vorkommen und was die Forschung sagt.',nav=['Fettsäuren','Quellen','Forschung','FAQ'],eb='Unabhängiges Omega-3-Wissen',h='Tauche ein in die <em>Tiefe</em> von Omega-3',s='Was sind ALA, EPA und DHA, woher kommen sie – und was sagt die Forschung wirklich? Klar erklärt, ohne Versprechen.',cta='Reise beginnen',st=['Fettsäuren','Quellen','Studien erklärt'],mq=['ALA · EPA · DHA','Meer & Pflanze','Was die Forschung sagt','Klar statt Werbung','Wissen aus der Tiefe']),
-'fr':dict(t='Fjord – Les oméga-3, en profondeur',d='Un savoir indépendant sur les acides gras oméga-3 : ce qu’ils sont, où les trouver et ce que dit la recherche.',nav=['Acides gras','Sources','Recherche','FAQ'],eb='Savoir oméga-3 indépendant',h='Plongez dans les <em>profondeurs</em> des oméga-3',s='Que sont l’ALA, l’EPA et le DHA, d’où viennent-ils – et que dit vraiment la recherche ? Expliqué simplement, sans promesses.',cta='Commencer le voyage',st=['Acides gras','Sources','Études décryptées'],mq=['ALA · EPA · DHA','Mer & plantes','Ce que dit la recherche','Clair, pas publicitaire','Le savoir des profondeurs']),
-'it':dict(t='Fjord – Gli omega-3, in profondità',d='Conoscenza indipendente sugli acidi grassi omega-3: cosa sono, dove si trovano e cosa dice la ricerca.',nav=['Acidi grassi','Fonti','Ricerca','FAQ'],eb='Sapere omega-3 indipendente',h='Immergiti nelle <em>profondità</em> degli omega-3',s='Cosa sono ALA, EPA e DHA, da dove arrivano – e cosa dice davvero la ricerca? Spiegato chiaramente, senza promesse.',cta='Inizia il viaggio',st=['Acidi grassi','Fonti','Studi spiegati'],mq=['ALA · EPA · DHA','Mare & piante','Cosa dice la ricerca','Chiaro, non pubblicità','Sapere dalle profondità'])}
+T={'de':dict(t='Fjord – Omega-3, tief erklärt',d='Unabhängiges Wissen über Omega-3-Fettsäuren: was sie sind, wo sie vorkommen und was die Forschung sagt.',nav=['Fettsäuren','Quellen','Forschung','FAQ'],eb='Unabhängiges Omega-3-Wissen',h='Tauche ein in die <em>Tiefe</em> von Omega-3',s='Was sind ALA, EPA und DHA, woher kommen sie – und was sagt die Forschung wirklich? Klar erklärt, ohne Versprechen.',cta='Reise beginnen',st=['Fettsäuren','Quellen','Forschungsfragen'],mq=['ALA · EPA · DHA','Meer & Pflanze','Was die Forschung sagt','Klar statt Werbung','Wissen aus der Tiefe']),
+'fr':dict(t='Fjord – Les oméga-3, en profondeur',d='Un savoir indépendant sur les acides gras oméga-3 : ce qu’ils sont, où les trouver et ce que dit la recherche.',nav=['Acides gras','Sources','Recherche','FAQ'],eb='Savoir oméga-3 indépendant',h='Plongez dans les <em>profondeurs</em> des oméga-3',s='Que sont l’ALA, l’EPA et le DHA, d’où viennent-ils – et que dit vraiment la recherche ? Expliqué simplement, sans promesses.',cta='Commencer le voyage',st=['Acides gras','Sources','Questions de recherche'],mq=['ALA · EPA · DHA','Mer & plantes','Ce que dit la recherche','Clair, pas publicitaire','Le savoir des profondeurs']),
+'it':dict(t='Fjord – Gli omega-3, in profondità',d='Conoscenza indipendente sugli acidi grassi omega-3: cosa sono, dove si trovano e cosa dice la ricerca.',nav=['Acidi grassi','Fonti','Ricerca','FAQ'],eb='Sapere omega-3 indipendente',h='Immergiti nelle <em>profondità</em> degli omega-3',s='Cosa sono ALA, EPA e DHA, da dove arrivano – e cosa dice davvero la ricerca? Spiegato chiaramente, senza promesse.',cta='Inizia il viaggio',st=['Acidi grassi','Fonti','Domande di ricerca'],mq=['ALA · EPA · DHA','Mare & piante','Cosa dice la ricerca','Chiaro, non pubblicità','Sapere dalle profondità'])}
 A={'de':dict(k='Die Tiefe-Reise',h='Drei Fettsäuren, drei <em>Tiefen</em>',p='Tippe auf eine Fettsäure und sieh dir ihre Kette an.',ch='Kohlenstoffe',db='Doppelbindungen',src='Vorkommen',
  it=[('ALA','Alpha-Linolensäure','Die pflanzliche Omega-3-Fettsäure. Der Körper nutzt sie als Baustein und wandelt nur einen kleinen Teil in EPA und DHA um.','Leinsamen, Chiasamen, Walnüsse, Rapsöl'),
  ('EPA','Eicosapentaensäure','Eine langkettige Omega-3-Fettsäure aus dem Meer. Sie ist Gegenstand vieler Studien zu Herz und Kreislauf.','Fetter Fisch, Meeresalgen'),
@@ -23,6 +23,39 @@ S={'de':dict(k='Quellen-Entdecker',h='Woher kommt <em>Omega-3</em>?',p='Wähle e
  sea=['Sgombro','Salmone','Aringa','Sardina','Trota','Tonno in scatola'],pl=['Olio di lino','Semi di lino','Semi di chia','Noci','Olio di colza'],
  ct='Quanto è <em>abbastanza</em>?',cp='Come orientamento, l’EFSA indica 250 mg di EPA+DHA al giorno per gli adulti, cioè circa 1,75 g a settimana. I valori sono medie e variano secondo specie e origine. Non è una raccomandazione individuale.',cf='Pesce',cn='porzioni da 100 g a settimana',cr='dell’orientamento settimanale',cg='di EPA+DHA a settimana',lg='it-CH')}
 SV=[2.5,2.0,1.7,1.4,1.0,0.3];PV=[53,22,17.5,9,9]
+R={'de':dict(k='Forschung',h='Was die Forschung <em>wirklich</em> sagt',p='Vier Fragen, ehrlich und ohne Versprechen beantwortet.',
+ r=[('Herz und Kreislauf','Beobachtungsstudien verbinden regelmässigen Fischverzehr oft mit günstigeren Herz-Kreislauf-Werten. Studien mit Omega-3-Präparaten kommen dagegen zu uneinheitlichen Ergebnissen. Ernährung als Ganzes spielt eine grosse Rolle.'),
+ ('Gehirn und Augen','DHA ist ein Baustein der Zellmembranen in Gehirn und Netzhaut. Ob eine zusätzliche Zufuhr bei gesunden Erwachsenen messbare Effekte hat, ist in Studien bisher nicht eindeutig belegt.'),
+ ('Schwangerschaft und Stillzeit','Fachgesellschaften weisen darauf hin, in dieser Zeit auf eine ausreichende DHA-Zufuhr zu achten. Was für dich passt, klärst du am besten mit einer Fachperson.'),
+ ('Wie liest man eine Studie?','Beobachtungsstudien zeigen Zusammenhänge, aber keine Ursachen. Kontrollierte Studien sind aussagekräftiger. Achte auf Dosis, Dauer, Teilnehmende und darauf, wer die Studie finanziert hat.')],
+ fk='FAQ',fh='Häufige <em>Fragen</em>',
+ f=[('Was ist der Unterschied zwischen ALA, EPA und DHA?','ALA stammt aus Pflanzen, EPA und DHA kommen vor allem aus Fisch und Meeresalgen. EPA und DHA sind länger und komplexer gebaut als ALA.'),
+ ('Wandelt der Körper ALA in EPA und DHA um?','Ja, aber nur zu einem kleinen Teil. Deshalb gelten Fisch und Algen als direkte Quellen für EPA und DHA.'),
+ ('Ist Algenöl eine Alternative zu Fisch?','Mikroalgen bilden DHA und teils EPA selbst. Fische nehmen diese Fettsäuren über Algen auf. Algenöl ist daher eine pflanzliche Quelle.'),
+ ('Brauche ich ein Präparat?','Das hängt von deiner Ernährung ab. Wer regelmässig fetten Fisch isst, deckt den Orientierungswert oft über das Essen. Bei Unsicherheit hilft eine Ärztin, ein Arzt oder eine Ernährungsberatung.')],
+ ft='Fjord ist ein unabhängiges Informationsangebot. Die Inhalte dienen der allgemeinen Information und ersetzen keine medizinische Beratung, Diagnose oder Behandlung.'),
+'fr':dict(k='Recherche',h='Ce que dit <em>vraiment</em> la recherche',p='Quatre questions, des réponses honnêtes et sans promesses.',
+ r=[('Cœur et circulation','Les études d’observation associent souvent une consommation régulière de poisson à de meilleurs indicateurs cardiovasculaires. Les études avec des compléments d’oméga-3 donnent en revanche des résultats variables. L’alimentation dans son ensemble compte beaucoup.'),
+ ('Cerveau et yeux','Le DHA est un constituant des membranes cellulaires du cerveau et de la rétine. Un effet mesurable d’un apport supplémentaire chez l’adulte en bonne santé n’est pas clairement établi.'),
+ ('Grossesse et allaitement','Les sociétés savantes invitent à veiller à un apport suffisant en DHA pendant cette période. Ce qui vous convient se discute au mieux avec un professionnel de santé.'),
+ ('Comment lire une étude ?','Les études d’observation montrent des liens, pas des causes. Les essais contrôlés sont plus solides. Regardez la dose, la durée, les participants et qui a financé l’étude.')],
+ fk='FAQ',fh='Questions <em>fréquentes</em>',
+ f=[('Quelle différence entre ALA, EPA et DHA ?','L’ALA vient des plantes ; l’EPA et le DHA viennent surtout des poissons et des algues marines. Leur chaîne est plus longue et plus complexe que celle de l’ALA.'),
+ ('Le corps transforme-t-il l’ALA en EPA et DHA ?','Oui, mais seulement en petite partie. C’est pourquoi le poisson et les algues sont des sources directes d’EPA et de DHA.'),
+ ('L’huile d’algues est-elle une alternative au poisson ?','Les microalgues produisent elles-mêmes du DHA et parfois de l’EPA. Les poissons les absorbent via les algues. L’huile d’algues est donc une source végétale.'),
+ ('Ai-je besoin d’un complément ?','Cela dépend de votre alimentation. Qui mange régulièrement du poisson gras couvre souvent l’apport de référence par l’assiette. En cas de doute, demandez conseil à un médecin ou à un diététicien.')],
+ ft='Fjord est un site d’information indépendant. Les contenus sont généraux et ne remplacent ni conseil médical, ni diagnostic, ni traitement.'),
+'it':dict(k='Ricerca',h='Cosa dice <em>davvero</em> la ricerca',p='Quattro domande, risposte oneste e senza promesse.',
+ r=[('Cuore e circolazione','Gli studi osservazionali associano spesso il consumo regolare di pesce a valori cardiovascolari più favorevoli. Gli studi con integratori di omega-3 danno invece risultati eterogenei. L’alimentazione nel suo insieme conta molto.'),
+ ('Cervello e occhi','Il DHA è un componente delle membrane cellulari di cervello e retina. Un effetto misurabile di un apporto aggiuntivo negli adulti sani non è chiaramente dimostrato.'),
+ ('Gravidanza e allattamento','Le società scientifiche invitano a garantire un apporto adeguato di DHA in questo periodo. Cosa è giusto per te lo chiarisci meglio con un professionista.'),
+ ('Come si legge uno studio?','Gli studi osservazionali mostrano associazioni, non cause. Gli studi controllati sono più solidi. Guarda dose, durata, partecipanti e chi ha finanziato lo studio.')],
+ fk='FAQ',fh='Domande <em>frequenti</em>',
+ f=[('Qual è la differenza tra ALA, EPA e DHA?','L’ALA viene dalle piante; EPA e DHA vengono soprattutto da pesce e alghe marine. La loro catena è più lunga e complessa di quella dell’ALA.'),
+ ('Il corpo trasforma l’ALA in EPA e DHA?','Sì, ma solo in piccola parte. Per questo pesce e alghe sono fonti dirette di EPA e DHA.'),
+ ('L’olio di alghe è un’alternativa al pesce?','Le microalghe producono da sole DHA e a volte EPA. I pesci li assumono tramite le alghe. L’olio di alghe è quindi una fonte vegetale.'),
+ ('Ho bisogno di un integratore?','Dipende dalla tua alimentazione. Chi mangia regolarmente pesce grasso spesso copre il valore di riferimento a tavola. In caso di dubbio chiedi a un medico o a un dietista.')],
+ ft='Fjord è un sito informativo indipendente. I contenuti sono generali e non sostituiscono consulto, diagnosi o cura medica.')}
 NC=[(18,3),(20,5),(22,6)]
 B='https://fjord-omega3.ch'
 for l,c in T.items():
@@ -41,8 +74,13 @@ for l,c in T.items():
     opts=''.join(f'<option value="{v}">{n}</option>' for n,v in zip(z['sea'],SV))
     sources='<section id="sources" class="src-sec"><div class="wrap"><span class="eyebrow">'+z['k']+'</span><h2>'+z['h']+'</h2><p class="sub">'+z['p']+'</p><div class="tabs">'+tabs+'</div>'+\
      '<div class="grp" data-g="0"><small>'+z['u'][0]+'</small>'+fx(z['sea'],SV,0)+'</div><div class="grp" data-g="1" hidden><small>'+z['u'][1]+'</small>'+fx(z['pl'],PV,1)+'</div><div class="grp alg" data-g="2" hidden><p>'+z['alg']+'</p></div>'+\
-     '<div class="calc" id="research"><h2>'+z['ct']+'</h2><p class="sub">'+z['cp']+'</p><div class="cbox" data-lg="'+z['lg']+'"><label>'+z['cf']+'<select id="cf">'+opts+'</select></label><label><b id="cn">2</b> '+z['cn']+'<input id="cp" type="range" min="0" max="7" value="2"></label>'+\
+     '<div class="calc" id="enough"><h2>'+z['ct']+'</h2><p class="sub">'+z['cp']+'</p><div class="cbox" data-lg="'+z['lg']+'"><label>'+z['cf']+'<select id="cf">'+opts+'</select></label><label><b id="cn">2</b> '+z['cn']+'<input id="cp" type="range" min="0" max="7" value="2"></label>'+\
      '<div class="gauge"><i id="cgb"></i></div><p class="res"><b id="cv">0</b> g '+z['cg']+' · <b id="cpct">0</b> % '+z['cr']+'</p></div></div></div></section>'
+
+    q=R[l];det=lambda it,c:''.join(f'<details class="{c} rv"><summary>{a}</summary><p>{b}</p></details>' for a,b in it)
+    research='<section id="research" class="res-sec"><div class="wrap"><span class="eyebrow">'+q['k']+'</span><h2>'+q['h']+'</h2><p class="sub">'+q['p']+'</p><div class="acc">'+det(q['r'],'ac')+'</div></div></section>'
+    faq='<section id="faq" class="res-sec faq"><div class="wrap"><span class="eyebrow">'+q['fk']+'</span><h2>'+q['fh']+'</h2><div class="acc">'+det(q['f'],'ac')+'</div></div></section>'
+    foot='<footer class="foot"><div class="wrap"><a class="logo" href="/'+l+'/"><i></i>FJORD</a><p>'+q['ft']+'</p><div class="lang">'+lang+'</div></div></footer>'
     open(f'{l}/index.html','w',encoding='utf-8').write(f'''<!doctype html><html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{c['t']}</title><meta name="description" content="{c['d']}"><link rel="canonical" href="{B}/{l}/">{alt}
 <meta property="og:title" content="{c['t']}"><meta property="og:description" content="{c['d']}"><meta property="og:image" content="{B}/assets/img/og.jpg">
@@ -52,5 +90,5 @@ for l,c in T.items():
 <header class="nav"><a class="logo" href="/{l}/"><i></i>FJORD</a><nav class="menu">{nav}<div class="lang">{lang}</div></nav></header>
 <main><section class="hero"><canvas id="sea"></canvas><div class="in">
 <span class="eyebrow rv">{c['eb']}</span><h1 class="rv">{c['h']}</h1><p class="sub rv">{c['s']}</p><a class="cta rv" href="#acids">{c['cta']} ↓</a>
-<div class="stats rv"><div><b data-count="3">0</b><span>{c['st'][0]}</span></div><div><b data-count="2">0</b><span>{c['st'][1]}</span></div><div><b data-count="12">0</b><span>{c['st'][2]}</span></div></div></div><div class="scroll"></div></section>
-<div class="band"><div>{mq}</div></div>{acids}{sources}</main></body></html>''')
+<div class="stats rv"><div><b data-count="3">0</b><span>{c['st'][0]}</span></div><div><b data-count="3">0</b><span>{c['st'][1]}</span></div><div><b data-count="4">0</b><span>{c['st'][2]}</span></div></div></div><div class="scroll"></div></section>
+<div class="band"><div>{mq}</div></div>{acids}{sources}{research}{faq}</main>{foot}</body></html>''')

@@ -5,7 +5,7 @@ PANO={'de':'Alles beginnt im Meer.','fr':'Tout commence dans la mer.','it':'Tutt
 CI=['ala','epa','dha']
 ARIMG=[dict(hero='algen-labor',figs={0:'vis-ijs',1:'algen-macro'}),dict(hero='etiket',figs={0:'capsules',2:'labtest'}),dict(hero='epa',figs={0:'dha',1:'ala'})]
 def pano(l):
-    return '<section class="pano"><img src="/assets/img/fjord-panorama.jpg" alt="" width="1376" height="768" loading="lazy"><p>'+PANO[l]+'</p></section>'
+    return '<section class="pano"><img src="/assets/img/fjord-panorama.jpg" alt="" width="1376" height="768" loading="lazy"><p>'+PANO[l]+'</p>'+L(l,'pano',GO[l],'pl')+'</section>'
 def fig(n,alt):
     return f'<figure class="fig rv"><img src="/assets/img/{n}.jpg" alt="{alt}" width="1200" height="675" loading="lazy"></figure>'
 import json
@@ -31,14 +31,14 @@ def weg(l):
     cards=''.join(f'<a class="wgc rv" href="{h}"{r}><span>{n}</span><b>{c[0]}</b><p>{c[1]}</p><i>{"↗" if r else "→"}</i></a>' for n,c,h,r in t)
     return f'<section id="weg" class="wg"><div class="wrap"><span class="eyebrow">{w["k"]}</span><h2>{w["h"]}</h2><div class="wgs">{cards}</div></div></section>'
 
+GO={'de':'Weiter entdecken →','fr':'Aller plus loin →','it':'Vai oltre →'}
 MORE={'de':'Mehr zum Thema','fr':'En savoir plus','it':'Approfondisci'}
 STRIP={'de':'Weiterführende Informationen zum Thema','fr':'Informations complémentaires sur le sujet','it':'Informazioni di approfondimento sul tema'}
 DISC={'de':'Fjord ist ein Informationsprojekt und mit der Seite','fr':'Fjord est un projet d’information lié au site','it':'Fjord è un progetto informativo collegato al sito'}
 def L(l,place,label=None,cls='xl'):
     return f'<a class="{cls}" href="{MAIN}/?utm_source=fjord&amp;utm_medium={l}&amp;utm_content={place}" rel="noopener">{label or MORE[l]}</a>'
 def disc(l):
-    suf={'de':'verbunden.','fr':'.','it':'.'}[l]
-    return '<p class="disc">'+DISC[l]+' '+L(l,'footer','molitademo1.pages.dev','xl2')+(' '+suf if l=='de' else suf)+'</p>'
+    return ''
 T={'de':dict(t='Fjord – Omega-3, tief erklärt',d='Wissen über Omega-3-Fettsäuren: was sie sind, wo sie vorkommen und was die Forschung sagt.',nav=['Fettsäuren','Quellen','Forschung','FAQ'],eb='Omega-3-Wissen, klar erklärt',h='Tauche ein in die <em>Tiefe</em> von Omega-3',s='Was sind ALA, EPA und DHA, woher kommen sie – und was sagt die Forschung wirklich? Klar erklärt, ohne Versprechen.',cta='Reise beginnen',st=['Fettsäuren','Quellen','Forschungsfragen'],mq=['ALA · EPA · DHA','Meer & Pflanze','Was die Forschung sagt','Klar statt Werbung','Wissen aus der Tiefe']),
 'fr':dict(t='Fjord – Les oméga-3, en profondeur',d='Un savoir sur les acides gras oméga-3 : ce qu’ils sont, où les trouver et ce que dit la recherche.',nav=['Acides gras','Sources','Recherche','FAQ'],eb='Le savoir oméga-3, clairement',h='Plongez dans les <em>profondeurs</em> des oméga-3',s='Que sont l’ALA, l’EPA et le DHA, d’où viennent-ils – et que dit vraiment la recherche ? Expliqué simplement, sans promesses.',cta='Commencer le voyage',st=['Acides gras','Sources','Questions de recherche'],mq=['ALA · EPA · DHA','Mer & plantes','Ce que dit la recherche','Clair, pas publicitaire','Le savoir des profondeurs']),
 'it':dict(t='Fjord – Gli omega-3, in profondità',d='Conoscenza sugli acidi grassi omega-3: cosa sono, dove si trovano e cosa dice la ricerca.',nav=['Acidi grassi','Fonti','Ricerca','FAQ'],eb='Il sapere omega-3, chiaro',h='Immergiti nelle <em>profondità</em> degli omega-3',s='Cosa sono ALA, EPA e DHA, da dove arrivano – e cosa dice davvero la ricerca? Spiegato chiaramente, senza promesse.',cta='Inizia il viaggio',st=['Acidi grassi','Fonti','Domande di ricerca'],mq=['ALA · EPA · DHA','Mare & piante','Cosa dice la ricerca','Chiaro, non pubblicità','Sapere dalle profondità'])}
@@ -230,7 +230,7 @@ for l,c in T.items():
 <link rel="stylesheet" href="/assets/style.css"><script src="/assets/fjord.js" defer></script></head><body>
 <header class="nav"><a class="logo" href="/{l}/"><i></i>FJORD</a><nav class="menu">{nav}{xn}<div class="lang">{lang}</div></nav></header>
 <main><section class="hero"><canvas id="sea"></canvas><div class="in">
-<span class="eyebrow rv">{c['eb']}</span><h1 class="rv">{c['h']}</h1><p class="sub rv">{c['s']}</p><a class="cta rv" href="#acids">{c['cta']} ↓</a>
+<span class="eyebrow rv">{c['eb']}</span><h1 class="rv">{c['h']}</h1><p class="sub rv">{c['s']}</p><div class="ctas rv"><a class="cta" href="#acids">{c['cta']} ↓</a>{L(l,'hero',GO[l],'cta2')}</div>
 <div class="stats rv"><div><b data-count="3">0</b><span>{c['st'][0]}</span></div><div><b data-count="3">0</b><span>{c['st'][1]}</span></div><div><b data-count="4">0</b><span>{c['st'][2]}</span></div></div></div><div class="scroll"></div></section>
 <div class="band"><div>{mq}</div></div>{acids}{sources}{teller(l)}{myth(l)}{teaser}{research}{faq}{weg(l)}{pano(l)}</main>{foot}</body></html>''')
 

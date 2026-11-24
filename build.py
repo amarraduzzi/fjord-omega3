@@ -90,6 +90,40 @@ AR={
  tk='Articolo',th_='Olio di alghe <em>o</em> olio di pesce?',tp='Due fonti di EPA e DHA a confronto: origine, composizione e cosa controllare.',tc='Leggi l’articolo'),
 }
 
+_n={'de':('Dieser Artikel dient der allgemeinen Information. Er ersetzt keine ärztliche Beratung, Diagnose oder Behandlung.','← Zurück zu Fjord'),'fr':('Cet article est à visée d’information générale. Il ne remplace ni un avis médical, ni un diagnostic, ni un traitement.','← Retour à Fjord'),'it':('Questo articolo ha scopo di informazione generale. Non sostituisce consulto, diagnosi o cura medica.','← Torna a Fjord')}
+REL={'de':'Weiterlesen','fr':'À lire aussi','it':'Da leggere anche'}
+AR2={
+'de':dict(slug='omega3-etikett-lesen',t='Omega-3-Etikett lesen: Was wirklich zählt – Fjord',d='Menge, EPA und DHA, Form, Herkunft: so liest du das Etikett eines Omega-3-Produkts und vergleichst sachlich.',
+ k='Artikel · 3 Min. Lesezeit',h='Das Etikett von <em>Omega-3</em> lesen',lead='Auf der Vorderseite fällt oft eine grosse Zahl auf. Entscheidend ist meist, was auf der Rückseite bei den Nährwerten und Zutaten steht.',
+ secs=[('Öl ist nicht gleich Omega-3','«1000 mg Fischöl» bedeutet, dass die Kapsel 1000 mg Öl enthält. Davon ist nur ein Teil EPA und DHA. Ihre Menge steht separat auf der Packung und sagt, wie viel der gesuchten Fettsäuren tatsächlich enthalten ist.'),
+ ('Pro Kapsel oder pro Portion?','Die Angaben beziehen sich manchmal auf eine Kapsel, manchmal auf die empfohlene Tagesportion, die aus mehreren Kapseln oder einem Teelöffel bestehen kann. Wer vergleicht, rechnet am besten alles auf dieselbe Basis um.'),
+ ('Form und Zusatzstoffe','Omega-3-Öle gibt es unter anderem als Triglycerid oder als Ethylester. Zusätzlich können Antioxidantien wie Vitamin E enthalten sein, die das Öl vor dem Verderben schützen. Die Zutatenliste zeigt auch, ob Aromen oder Süssungsmittel dabei sind.')],
+ th=['','Angabe','Was dahintersteckt'],rows=[('Menge','«1000 mg Fischöl» oder «Algenöl»','Gesamtmenge des Öls, nicht von EPA und DHA'),('EPA / DHA','Separat angegebene Menge','Gehalt der gesuchten Fettsäuren, pro Kapsel oder Portion prüfen'),('Form','Triglycerid, Ethylester','Chemische Form, in der die Fettsäuren im Öl gebunden sind'),('Herkunft','Fischart oder Algenstamm, Land','Zeigt, woher der Rohstoff stammt; seriöse Anbieter nennen sie')],
+ ch='Fünf Fragen vor dem Kauf',ci=['Wie viel EPA und DHA stecken in einer Portion?','Auf wie viele Kapseln bezieht sich die Angabe?','Stammt das Öl aus Fisch oder aus Algen?','Gibt es Prüfberichte zu Reinheit und Frische?','Wie lange ist das Produkt haltbar und wie wird es gelagert?'],
+ bh='Kurz gesagt',bp='Das Etikett verrät mehr als die Werbung. Wer Menge, Form und Herkunft kennt, kann Produkte nüchtern vergleichen, ob Fisch- oder Algenöl.',
+ tk='Artikel',th_='Das Etikett von <em>Omega-3</em> lesen',tp='Ölmenge, EPA und DHA, Form, Herkunft: was die Packung wirklich sagt.',tc='Artikel lesen'),
+'fr':dict(slug='lire-etiquette-omega-3',t='Lire une étiquette d’oméga-3 : ce qui compte – Fjord',d='Quantité, EPA et DHA, forme, origine : comment lire l’étiquette d’un produit oméga-3 et comparer sans parti pris.',
+ k='Article · 3 min de lecture',h='Lire l’étiquette des <em>oméga-3</em>',lead='Sur le devant, un grand chiffre attire l’œil. L’essentiel se trouve le plus souvent au dos, dans les valeurs nutritionnelles et la liste des ingrédients.',
+ secs=[('Huile ne veut pas dire oméga-3','« 1000 mg d’huile de poisson » signifie que la capsule contient 1000 mg d’huile. Seule une partie est de l’EPA et du DHA. Leur quantité est indiquée séparément sur l’emballage et dit combien des acides gras recherchés le produit contient vraiment.'),
+ ('Par capsule ou par portion ?','Les indications portent parfois sur une capsule, parfois sur la portion quotidienne recommandée, qui peut compter plusieurs capsules ou une cuillère à café. Pour comparer, le plus simple est de ramener tout à la même base.'),
+ ('Forme et additifs','Les huiles d’oméga-3 existent notamment sous forme de triglycéride ou d’ester éthylique. Des antioxydants comme la vitamine E peuvent être ajoutés pour protéger l’huile de l’oxydation. La liste des ingrédients montre aussi la présence d’arômes ou d’édulcorants.')],
+ th=['','Mention','Ce qu’il y a derrière'],rows=[('Quantité','« 1000 mg d’huile de poisson » ou « d’algues »','Quantité totale d’huile, pas d’EPA et de DHA'),('EPA / DHA','Quantité indiquée séparément','Teneur en acides gras recherchés, à vérifier par capsule ou par portion'),('Forme','Triglycéride, ester éthylique','Forme chimique sous laquelle les acides gras sont liés dans l’huile'),('Origine','Espèce de poisson ou souche d’algues, pays','Montre d’où vient la matière première ; les fournisseurs sérieux l’indiquent')],
+ ch='Cinq questions avant d’acheter',ci=['Combien d’EPA et de DHA contient une portion ?','À combien de capsules se rapporte l’indication ?','L’huile vient-elle de poisson ou d’algues ?','Existe-t-il des rapports d’analyses sur la pureté et la fraîcheur ?','Jusqu’à quand le produit se conserve-t-il, et comment le stocker ?'],
+ bh='En bref',bp='L’étiquette en dit plus que la publicité. Qui connaît la quantité, la forme et l’origine peut comparer les produits sans parti pris, qu’il s’agisse d’huile de poisson ou d’algues.',
+ tk='Article',th_='Lire l’étiquette des <em>oméga-3</em>',tp='Quantité d’huile, EPA et DHA, forme, origine : ce que dit vraiment l’emballage.',tc='Lire l’article'),
+'it':dict(slug='leggere-etichetta-omega-3',t='Leggere l’etichetta degli omega-3: cosa conta – Fjord',d='Quantità, EPA e DHA, forma, origine: come leggere l’etichetta di un prodotto omega-3 e confrontare con sobrietà.',
+ k='Articolo · 3 min di lettura',h='Leggere l’etichetta degli <em>omega-3</em>',lead='Sul fronte spicca un grande numero. L’essenziale di solito sta sul retro, tra valori nutrizionali e ingredienti.',
+ secs=[('Olio non significa omega-3','«1000 mg di olio di pesce» vuol dire che la capsula contiene 1000 mg di olio. Solo una parte è EPA e DHA. La loro quantità è indicata a parte sulla confezione e dice quanti degli acidi grassi cercati ci sono davvero.'),
+ ('Per capsula o per porzione?','I dati si riferiscono a volte a una capsula, a volte alla porzione giornaliera consigliata, che può comprendere più capsule o un cucchiaino. Per confrontare conviene riportare tutto alla stessa base.'),
+ ('Forma e additivi','Gli oli omega-3 esistono tra l’altro come trigliceride o come estere etilico. Possono contenere antiossidanti come la vitamina E, che proteggono l’olio dall’ossidazione. Anche l’elenco degli ingredienti mostra se ci sono aromi o dolcificanti.')],
+ th=['','Indicazione','Cosa c’è dietro'],rows=[('Quantità','«1000 mg di olio di pesce» o «di alghe»','Quantità totale di olio, non di EPA e DHA'),('EPA / DHA','Quantità indicata a parte','Contenuto degli acidi grassi cercati, da verificare per capsula o per porzione'),('Forma','Trigliceride, estere etilico','Forma chimica in cui gli acidi grassi sono legati nell’olio'),('Origine','Specie di pesce o ceppo di alghe, paese','Mostra da dove viene la materia prima; i fornitori seri la indicano')],
+ ch='Cinque domande prima di comprare',ci=['Quanti EPA e DHA contiene una porzione?','A quante capsule si riferisce il dato?','L’olio viene da pesce o da alghe?','Esistono rapporti di analisi su purezza e freschezza?','Fino a quando si conserva il prodotto e come va conservato?'],
+ bh='In breve',bp='L’etichetta dice più della pubblicità. Chi conosce quantità, forma e origine può confrontare i prodotti con sobrietà, che si tratti di olio di pesce o di alghe.',
+ tk='Articolo',th_='Leggere l’etichetta degli <em>omega-3</em>',tp='Quantità di olio, EPA e DHA, forma, origine: cosa dice davvero la confezione.',tc='Leggi l’articolo'),
+}
+for _l in AR2: AR2[_l]['note'],AR2[_l]['back']=_n[_l]
+ARS=[AR,AR2]
+
 NC=[(18,3),(20,5),(22,6)]
 B='https://fjord-omega3.ch'
 for l,c in T.items():
@@ -114,8 +148,9 @@ for l,c in T.items():
     q=R[l];det=lambda it,c:''.join(f'<details class="{c} rv"><summary>{a}</summary><p>{b}</p></details>' for a,b in it)
     research='<section id="research" class="res-sec"><div class="wrap"><span class="eyebrow">'+q['k']+'</span><h2>'+q['h']+'</h2><p class="sub">'+q['p']+'</p><div class="acc">'+det(q['r'],'ac')+'</div></div></section>'
     faq='<section id="faq" class="res-sec faq"><div class="wrap"><span class="eyebrow">'+q['fk']+'</span><h2>'+q['fh']+'</h2><div class="acc">'+det(q['f'],'ac')+'</div></div></section>'
-    ar=AR[l];teaser=f'<section id="artikel" class="tz"><div class="wrap"><a class="tzc rv" href="/{l}/{ar["slug"]}/"><span class="eyebrow">{ar["tk"]}</span><h2>{ar["th_"]}</h2><p>{ar["tp"]}</p><span class="cta">{ar["tc"]} →</span></a></div></section>'
-    foot='<footer class="foot"><div class="wrap"><a class="logo" href="/'+l+'/"><i></i>FJORD</a><a class="flink" href="/'+l+'/'+ar['slug']+'/">'+ar['tk']+': '+re.sub('<.*?>','',ar['th_'])+'</a><p>'+q['ft']+'</p><div class="lang">'+lang+'</div></div></footer>'
+    teaser='<section id="artikel" class="tz"><div class="wrap">'+''.join(f'<a class="tzc rv" href="/{l}/{X[l]["slug"]}/"><span class="eyebrow">{X[l]["tk"]}</span><h2>{X[l]["th_"]}</h2><p>{X[l]["tp"]}</p><span class="cta">{X[l]["tc"]} →</span></a>' for X in ARS)+'</div></section>'
+    fl=''.join(f'<a class="flink" href="/{l}/{X[l]["slug"]}/">{re.sub("<.*?>","",X[l]["th_"])}</a>' for X in ARS)
+    foot='<footer class="foot"><div class="wrap"><a class="logo" href="/'+l+'/"><i></i>FJORD</a><div class="fl">'+fl+'</div><p>'+q['ft']+'</p><div class="lang">'+lang+'</div></div></footer>'
     open(f'{l}/index.html','w',encoding='utf-8').write(f'''<!doctype html><html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{c['t']}</title><meta name="description" content="{c['d']}"><link rel="canonical" href="{B}/{l}/">{alt}
 <meta property="og:title" content="{c['t']}"><meta property="og:description" content="{c['d']}"><meta property="og:image" content="{B}/assets/img/og.jpg">
@@ -130,34 +165,38 @@ for l,c in T.items():
 
 
 # ---- Artikelseiten ----
-def alt_art(k):
+def alt_art(AR):
     return ''.join(f'<link rel="alternate" hreflang="{x}" href="{B}/{x}/{AR[x]["slug"]}/">' for x in AR)+f'<link rel="alternate" hreflang="x-default" href="{B}/de/{AR["de"]["slug"]}/">'
-for l,c in T.items():
-    a=AR[l];q=R[l]
-    nav=''.join(f'<a href="/{l}/#{i}">{n}</a>' for i,n in zip(['acids','sources','research','faq'],c['nav']))
-    lang=''.join(f'<a href="/{k}/{AR[k]["slug"]}/" class="{"on" if k==l else ""}" hreflang="{k}">{k.upper()}</a>' for k in T)
-    secs=''.join(f'<h2 class="rv">{h}</h2><p class="rv">{p}</p>' for h,p in a['secs'][:3])
-    table='<div class="cmpw rv"><table class="cmp"><thead><tr>'+''.join(f'<th>{x}</th>' for x in a['th'])+'</tr></thead><tbody>'+''.join('<tr><th scope="row">'+r[0]+'</th><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>' for r in a['rows'])+'</tbody></table></div>'
-    checks='<h2 class="rv">'+a['ch']+'</h2><ul class="chk rv">'+''.join(f'<li>{i}</li>' for i in a['ci'])+'</ul>'
-    foot='<footer class="foot"><div class="wrap"><a class="logo" href="/'+l+'/"><i></i>FJORD</a><p>'+q['ft']+'</p><div class="lang">'+lang+'</div></div></footer>'
-    url=f'{B}/{l}/{a["slug"]}/'
-    os.makedirs(f'{l}/{a["slug"]}',exist_ok=True)
-    open(f'{l}/{a["slug"]}/index.html','w',encoding='utf-8').write(f'''<!doctype html><html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{a['t']}</title><meta name="description" content="{a['d']}"><link rel="canonical" href="{url}">{alt_art(l)}
-<meta property="og:type" content="article"><meta property="og:title" content="{a['t']}"><meta property="og:description" content="{a['d']}"><meta property="og:image" content="{B}/assets/img/og.jpg">
-<link rel="icon" href="/assets/fjord.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css"><script src="/assets/fjord.js" defer></script></head><body class="art-page">
-<header class="nav solid"><a class="logo" href="/{l}/"><i></i>FJORD</a><nav class="menu">{nav}<div class="lang">{lang}</div></nav></header>
-<main><section class="art-hero"><div class="in"><a class="back" href="/{l}/">{a['back']}</a><span class="eyebrow">{a['k']}</span><h1>{a['h']}</h1><p class="sub">{a['lead']}</p></div></section>
-<article class="art"><div class="in">{secs}{table}{checks}<h2 class="rv">{a['bh']}</h2><p class="rv">{a['bp']}</p><p class="note rv">{a['note']}</p></div></article></main>{foot}</body></html>''')
+def make(AR,others):
+    for l,c in T.items():
+        a=AR[l];q=R[l]
+        nav=''.join(f'<a href="/{l}/#{i}">{n}</a>' for i,n in zip(['acids','sources','research','faq'],c['nav']))
+        lang=''.join(f'<a href="/{k}/{AR[k]["slug"]}/" class="{"on" if k==l else ""}" hreflang="{k}">{k.upper()}</a>' for k in T)
+        secs=''.join(f'<h2 class="rv">{h}</h2><p class="rv">{p}</p>' for h,p in a['secs'][:3])
+        table='<div class="cmpw rv"><table class="cmp"><thead><tr>'+''.join(f'<th>{x}</th>' for x in a['th'])+'</tr></thead><tbody>'+''.join('<tr><th scope="row">'+r[0]+'</th><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>' for r in a['rows'])+'</tbody></table></div>'
+        checks='<h2 class="rv">'+a['ch']+'</h2><ul class="chk rv">'+''.join(f'<li>{i}</li>' for i in a['ci'])+'</ul>'
+        foot='<footer class="foot"><div class="wrap"><a class="logo" href="/'+l+'/"><i></i>FJORD</a><p>'+q['ft']+'</p><div class="lang">'+lang+'</div></div></footer>'
+        rel='<h2 class="rv relh">'+REL[l]+'</h2><div class="tzr">'+''.join(f'<a class="tzc rv" href="/{l}/{X[l]["slug"]}/"><span class="eyebrow">{X[l]["tk"]}</span><h2>{X[l]["th_"]}</h2><p>{X[l]["tp"]}</p><span class="cta">{X[l]["tc"]} →</span></a>' for X in others)+'</div>'
+        url=f'{B}/{l}/{a["slug"]}/'
+        os.makedirs(f'{l}/{a["slug"]}',exist_ok=True)
+        open(f'{l}/{a["slug"]}/index.html','w',encoding='utf-8').write(f'''<!doctype html><html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{a['t']}</title><meta name="description" content="{a['d']}"><link rel="canonical" href="{url}">{alt_art(AR)}
+    <meta property="og:type" content="article"><meta property="og:title" content="{a['t']}"><meta property="og:description" content="{a['d']}"><meta property="og:image" content="{B}/assets/img/og.jpg">
+    <link rel="icon" href="/assets/fjord.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css"><script src="/assets/fjord.js" defer></script></head><body class="art-page">
+    <header class="nav solid"><a class="logo" href="/{l}/"><i></i>FJORD</a><nav class="menu">{nav}<div class="lang">{lang}</div></nav></header>
+    <main><section class="art-hero"><div class="in"><a class="back" href="/{l}/">{a['back']}</a><span class="eyebrow">{a['k']}</span><h1>{a['h']}</h1><p class="sub">{a['lead']}</p></div></section>
+    <article class="art"><div class="in">{secs}{table}{checks}<h2 class="rv">{a['bh']}</h2><p class="rv">{a['bp']}</p><p class="note rv">{a['note']}</p>{rel}</div></article></main>{foot}</body></html>''')
+
+
+for X in ARS:
+    make(X,[Y for Y in ARS if Y is not X])
 
 # sitemap
-urls=[f'{B}/{k}/' for k in T]+[f'{B}/{k}/{AR[k]["slug"]}/' for k in AR]
-def xl(group):
-    return ''.join(f'<xhtml:link rel="alternate" hreflang="{k}" href="{u}"/>' for k,u in group)
-home=[(k,f'{B}/{k}/') for k in T];art=[(k,f'{B}/{k}/{AR[k]["slug"]}/') for k in AR]
+B_=B
+home=[(k,f'{B}/{k}/') for k in T]
 sm='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'
-for g in (home,art):
-    for k,u in g: sm+=f'<url><loc>{u}</loc>{xl(g)}</url>'
+for g in [home]+[[(k,f'{B}/{k}/{X[k]["slug"]}/') for k in X] for X in ARS]:
+    for k,u in g: sm+=f'<url><loc>{u}</loc>'+''.join(f'<xhtml:link rel="alternate" hreflang="{kk}" href="{uu}"/>' for kk,uu in g)+'</url>'
 open('sitemap.xml','w',encoding='utf-8').write(sm+'</urlset>')

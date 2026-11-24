@@ -90,3 +90,7 @@ input[type=range]{width:100%;accent-color:var(--gold);height:6px}
 .ac p{padding:0 26px 24px;color:var(--mute);animation:fi .5s}
 .foot{border-top:1px solid var(--line);padding:56px 6vw;background:#020812;text-align:center}
 .foot .wrap{display:grid;gap:22px;justify-items:center}.foot p{max-width:620px;color:var(--mute);font-size:.88rem}
+.hero::before{content:"";position:absolute;inset:-5%;background:linear-gradient(180deg,rgba(3,11,23,.35),rgba(3,11,23,.1) 45%,rgba(3,11,23,.9)),url(/assets/img/hero.jpg) center/cover;opacity:.62;animation:kb 30s ease-in-out infinite alternate}
+@keyframes kb{to{transform:scale(1.08) translate(-1.5%,1%)}}
+.pic{display:block;width:100%;height:auto;aspect-ratio:16/8;object-fit:cover;border-radius:22px;margin-bottom:26px;border:1px solid var(--line);animation:fi .7s}
+.alg .pic{margin-bottom:18px}.alg p{margin-top:0}

@@ -73,7 +73,7 @@ for l,c in T.items():
     tabs=''.join(f'<button class="tab{" on" if i==0 else ""}" data-g="{i}">{t}</button>' for i,t in enumerate(z['tabs']))
     opts=''.join(f'<option value="{v}">{n}</option>' for n,v in zip(z['sea'],SV))
     sources='<section id="sources" class="src-sec"><div class="wrap"><span class="eyebrow">'+z['k']+'</span><h2>'+z['h']+'</h2><p class="sub">'+z['p']+'</p><div class="tabs">'+tabs+'</div>'+\
-     '<div class="grp" data-g="0"><small>'+z['u'][0]+'</small>'+fx(z['sea'],SV,0)+'</div><div class="grp" data-g="1" hidden><small>'+z['u'][1]+'</small>'+fx(z['pl'],PV,1)+'</div><div class="grp alg" data-g="2" hidden><p>'+z['alg']+'</p></div>'+\
+     '<div class="grp" data-g="0"><img class="pic" src="/assets/img/sea.jpg" alt="'+z['tabs'][0]+'" width="1100" height="615" loading="lazy"><small>'+z['u'][0]+'</small>'+fx(z['sea'],SV,0)+'</div><div class="grp" data-g="1" hidden><small>'+z['u'][1]+'</small>'+fx(z['pl'],PV,1)+'</div><div class="grp alg" data-g="2" hidden><p>'+z['alg']+'</p></div>'+\
      '<div class="calc" id="enough"><h2>'+z['ct']+'</h2><p class="sub">'+z['cp']+'</p><div class="cbox" data-lg="'+z['lg']+'"><label>'+z['cf']+'<select id="cf">'+opts+'</select></label><label><b id="cn">2</b> '+z['cn']+'<input id="cp" type="range" min="0" max="7" value="2"></label>'+\
      '<div class="gauge"><i id="cgb"></i></div><p class="res"><b id="cv">0</b> g '+z['cg']+' · <b id="cpct">0</b> % '+z['cr']+'</p></div></div></div></section>'
 

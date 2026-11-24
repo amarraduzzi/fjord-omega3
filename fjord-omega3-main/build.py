@@ -13,6 +13,16 @@ A={'de':dict(k='Die Tiefe-Reise',h='Drei Fettsäuren, drei <em>Tiefen</em>',p='T
  it=[('ALA','Acido alfa-linolenico','L’omega-3 di origine vegetale. Il corpo lo usa come mattone di base e ne converte solo una piccola parte in EPA e DHA.','Semi di lino, chia, noci, olio di colza'),
  ('EPA','Acido eicosapentaenoico','Un omega-3 a catena lunga di origine marina, oggetto di molti studi su cuore e circolazione.','Pesce grasso, alghe marine'),
  ('DHA','Acido docosaesaenoico','Un componente principale delle membrane cellulari di cervello e retina. La catena più lunga e complessa delle tre.','Pesce grasso, microalghe')],dp=['0 m · Superficie','200 m · Zona crepuscolare','1000 m · Grandi profondità'])}
+S={'de':dict(k='Quellen-Entdecker',h='Woher kommt <em>Omega-3</em>?',p='Wähle eine Welt und vergleiche den Gehalt pro 100 g.',tabs=['Meer','Pflanze','Algen'],u=['g EPA+DHA pro 100 g','g ALA pro 100 g'],alg='Mikroalgenöl liefert DHA, teils auch EPA. Der Gehalt variiert je nach Produkt, deshalb steht hier keine Zahl.',
+ sea=['Makrele','Lachs','Hering','Sardine','Forelle','Thunfisch (Dose)'],pl=['Leinöl','Leinsamen','Chiasamen','Walnüsse','Rapsöl'],
+ ct='Wie viel ist <em>genug</em>?',cp='Als Orientierung nennt die EFSA für Erwachsene 250 mg EPA+DHA pro Tag, also etwa 1,75 g pro Woche. Die Werte sind Durchschnitte und schwanken je nach Art und Herkunft. Das ist keine individuelle Empfehlung.',cf='Fisch',cn='Portionen à 100 g pro Woche',cr='der Wochen-Orientierung',cg='EPA+DHA pro Woche',lg='de-CH'),
+'fr':dict(k='L’explorateur de sources',h='D’où viennent les <em>oméga-3</em> ?',p='Choisissez un monde et comparez la teneur pour 100 g.',tabs=['Mer','Plantes','Algues'],u=['g d’EPA+DHA pour 100 g','g d’ALA pour 100 g'],alg='L’huile de microalgues apporte du DHA, parfois aussi de l’EPA. La teneur varie selon le produit, d’où l’absence de chiffre.',
+ sea=['Maquereau','Saumon','Hareng','Sardine','Truite','Thon en conserve'],pl=['Huile de lin','Graines de lin','Graines de chia','Noix','Huile de colza'],
+ ct='Combien, <em>c’est assez</em> ?',cp='À titre d’orientation, l’EFSA cite 250 mg d’EPA+DHA par jour pour les adultes, soit environ 1,75 g par semaine. Les valeurs sont des moyennes qui varient selon l’espèce et l’origine. Ce n’est pas une recommandation individuelle.',cf='Poisson',cn='portions de 100 g par semaine',cr='de l’orientation hebdomadaire',cg='d’EPA+DHA par semaine',lg='fr-CH'),
+'it':dict(k='L’esploratore delle fonti',h='Da dove arrivano gli <em>omega-3</em>?',p='Scegli un mondo e confronta il contenuto per 100 g.',tabs=['Mare','Piante','Alghe'],u=['g di EPA+DHA per 100 g','g di ALA per 100 g'],alg='L’olio di microalghe fornisce DHA, a volte anche EPA. Il contenuto varia secondo il prodotto, per questo qui non c’è un numero.',
+ sea=['Sgombro','Salmone','Aringa','Sardina','Trota','Tonno in scatola'],pl=['Olio di lino','Semi di lino','Semi di chia','Noci','Olio di colza'],
+ ct='Quanto è <em>abbastanza</em>?',cp='Come orientamento, l’EFSA indica 250 mg di EPA+DHA al giorno per gli adulti, cioè circa 1,75 g a settimana. I valori sono medie e variano secondo specie e origine. Non è una raccomandazione individuale.',cf='Pesce',cn='porzioni da 100 g a settimana',cr='dell’orientamento settimanale',cg='di EPA+DHA a settimana',lg='it-CH')}
+SV=[2.5,2.0,1.7,1.4,1.0,0.3];PV=[53,22,17.5,9,9]
 NC=[(18,3),(20,5),(22,6)]
 B='https://fjord-omega3.ch'
 for l,c in T.items():
@@ -25,6 +35,14 @@ for l,c in T.items():
     det=''.join(f'<div class="det" data-i="{i}"><h3>{x[1]}</h3><p>{x[2]}</p><p class="src"><strong>{a["src"]}:</strong> {x[3]}</p></div>' for i,x in enumerate(a['it']))
     acids=f'''<section id="acids" class="deep"><div class="wrap"><span class="eyebrow">{a['k']}</span><h2>{a['h']}</h2><p class="sub">{a['p']}</p>
 <div class="cards">{cards}</div><div class="panel"><svg id="chain" viewBox="0 0 900 150" aria-hidden="true"></svg><div class="meta"><div><b id="mc">18</b><span>{a['ch']}</span></div><div><b id="md">3</b><span>{a['db']}</span></div></div>{det}</div></div></section>'''
+
+    z=S[l];fx=lambda names,vals,g:''.join(f'<div class="fx rv" data-g="{g}"><span>{n}</span><i style="--w:{v/max(vals)*100:.0f}%"></i><em>{str(v).replace(".",",") if l!="de" else v}</em></div>' for n,v in zip(names,vals))
+    tabs=''.join(f'<button class="tab{" on" if i==0 else ""}" data-g="{i}">{t}</button>' for i,t in enumerate(z['tabs']))
+    opts=''.join(f'<option value="{v}">{n}</option>' for n,v in zip(z['sea'],SV))
+    sources='<section id="sources" class="src-sec"><div class="wrap"><span class="eyebrow">'+z['k']+'</span><h2>'+z['h']+'</h2><p class="sub">'+z['p']+'</p><div class="tabs">'+tabs+'</div>'+\
+     '<div class="grp" data-g="0"><small>'+z['u'][0]+'</small>'+fx(z['sea'],SV,0)+'</div><div class="grp" data-g="1" hidden><small>'+z['u'][1]+'</small>'+fx(z['pl'],PV,1)+'</div><div class="grp alg" data-g="2" hidden><p>'+z['alg']+'</p></div>'+\
+     '<div class="calc" id="research"><h2>'+z['ct']+'</h2><p class="sub">'+z['cp']+'</p><div class="cbox" data-lg="'+z['lg']+'"><label>'+z['cf']+'<select id="cf">'+opts+'</select></label><label><b id="cn">2</b> '+z['cn']+'<input id="cp" type="range" min="0" max="7" value="2"></label>'+\
+     '<div class="gauge"><i id="cgb"></i></div><p class="res"><b id="cv">0</b> g '+z['cg']+' · <b id="cpct">0</b> % '+z['cr']+'</p></div></div></div></section>'
     open(f'{l}/index.html','w',encoding='utf-8').write(f'''<!doctype html><html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{c['t']}</title><meta name="description" content="{c['d']}"><link rel="canonical" href="{B}/{l}/">{alt}
 <meta property="og:title" content="{c['t']}"><meta property="og:description" content="{c['d']}"><meta property="og:image" content="{B}/assets/img/og.jpg">
@@ -35,4 +53,4 @@ for l,c in T.items():
 <main><section class="hero"><canvas id="sea"></canvas><div class="in">
 <span class="eyebrow rv">{c['eb']}</span><h1 class="rv">{c['h']}</h1><p class="sub rv">{c['s']}</p><a class="cta rv" href="#acids">{c['cta']} ↓</a>
 <div class="stats rv"><div><b data-count="3">0</b><span>{c['st'][0]}</span></div><div><b data-count="2">0</b><span>{c['st'][1]}</span></div><div><b data-count="12">0</b><span>{c['st'][2]}</span></div></div></div><div class="scroll"></div></section>
-<div class="band"><div>{mq}</div></div>{acids}</main></body></html>''')
+<div class="band"><div>{mq}</div></div>{acids}{sources}</main></body></html>''')

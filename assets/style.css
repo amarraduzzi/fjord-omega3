@@ -231,3 +231,5 @@ input[type=range]{width:100%;accent-color:var(--gold);height:6px}
 .cagain{font:inherit;background:none;border:0;color:var(--mute);cursor:pointer;text-decoration:underline;font-size:.88rem}
 .cf2[hidden],.cr[hidden],.cq[hidden]{display:none}
 .cf2 .cs{order:-2!important}
+
+.fig43 img{aspect-ratio:4/3}.fig43{max-width:760px;margin-left:auto;margin-right:auto}

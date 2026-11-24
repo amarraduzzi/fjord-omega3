@@ -9,6 +9,8 @@ ARIMG=[dict(hero='algen-labor',figs={0:'vis-ijs',1:'algen-macro'}),dict(hero='et
 def pano(l):
     return '<section class="pano"><img src="/assets/img/fjord-panorama.jpg" alt="" width="1376" height="768" loading="lazy"><p>'+PANO[l]+'</p>'+L(l,'pano',GO[l],'pl')+'</section>'
 def fig(n,alt):
+    if n.startswith('herkunft-'):
+        return f'<figure class="fig fig43 rv"><img src="/assets/img/{n}.jpg" alt="{alt}" width="1200" height="896" loading="lazy"></figure>'
     return f'<figure class="fig rv"><img src="/assets/img/{n}.jpg" alt="{alt}" width="1200" height="675" loading="lazy"></figure>'
 import json
 TL={'de':dict(k='Dein Wochenteller',h='Was kommt bei dir <em>auf den Teller</em>?',p='Tippe auf alles, was du in einer typischen Woche isst. Du siehst, aus welchen Omega-3-Welten deine Mahlzeiten stammen.',w=('Meer','Pflanze','Algen'),it=[('Lachs',0),('Makrele',0),('Sardinen',0),('Hering',0),('Walnüsse',1),('Leinsamen',1),('Chiasamen',1),('Algenöl',2)],m=('Tippe auf die Lebensmittel, die du kennst oder isst.','Eine Welt: ein guter Anfang.','Zwei Welten: schon recht abwechslungsreich.','Alle drei Welten: grosse Vielfalt.'),n='Spielerische Übersicht, keine Bewertung und keine persönliche Empfehlung.',a='Ideen für den Alltag'),

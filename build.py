@@ -3,7 +3,9 @@ MAIN='https://molitademo1.pages.dev'
 LG={'de':('Kohlenstoffkette','Doppelbindung'),'fr':('Chaîne de carbones','Double liaison'),'it':('Catena di carbonio','Doppio legame')}
 PANO={'de':'Alles beginnt im Meer.','fr':'Tout commence dans la mer.','it':'Tutto comincia nel mare.'}
 CI=['ala','epa','dha']
-ARIMG=[dict(hero='algen-labor',figs={0:'vis-ijs',1:'algen-macro'}),dict(hero='etiket',figs={0:'capsules',2:'labtest'}),dict(hero='epa',figs={0:'dha',1:'ala'})]
+import os
+def _i(n,fb): return n if os.path.exists(f'assets/img/{n}.jpg') else fb
+ARIMG=[dict(hero='algen-labor',figs={0:'vis-ijs',1:'algen-macro'}),dict(hero='etiket',figs={0:'capsules',2:'labtest'}),dict(hero='epa',figs={0:'dha',1:'ala'}),dict(hero=_i('herkunft-fjord','fjord-panorama'),figs={0:_i('herkunft-boot','sea'),1:_i('herkunft-plankton','algen-macro'),2:_i('herkunft-algenteich','algen-labor')})]
 def pano(l):
     return '<section class="pano"><img src="/assets/img/fjord-panorama.jpg" alt="" width="1376" height="768" loading="lazy"><p>'+PANO[l]+'</p>'+L(l,'pano',GO[l],'pl')+'</section>'
 def fig(n,alt):
@@ -201,7 +203,38 @@ AR3={
 }
 for _l in AR3: AR3[_l]['note'],AR3[_l]['back']=_n[_l]
 
-ARS=[AR,AR2,AR3]
+AR4={
+'de':dict(slug='omega3-nachhaltig',t='Omega-3 und seine Herkunft: Wildfang, Zucht, Algen – Fjord',d='Wildfang, Aquakultur, Algen: woher Omega-3 kommen kann und worauf man bei der Herkunft achten kann.',
+ k='Artikel · 3 Min. Lesezeit',h='Omega-3 und seine <em>Herkunft</em>',lead='Ob Fisch, Pflanze oder Alge: Omega-3 hat immer einen Ursprung. Wer ihn kennt, kann bewusster auswählen.',
+ secs=[('Woher der Fisch kommt','Fisch stammt entweder aus Wildfang oder aus Aquakultur. Beides kann mehr oder weniger sorgfältig betrieben werden. Unabhängige Siegel wie MSC für Wildfang und ASC für Zucht geben eine erste Orientierung. Sie sind keine Garantie, zeigen aber, dass ein Betrieb bestimmte Standards überprüfen lässt.'),
+ ('Kleine Fische, kurze Wege','Sardinen, Heringe und Makrelen sind kleiner und stehen in der Nahrungskette weiter unten als grosse Raubfische. Wer zwischen mehreren Arten abwechselt, verteilt zudem die Nachfrage auf mehr als eine Art.'),
+ ('Algen: die Quelle hinter der Quelle','Fische reichern Omega-3 grösstenteils über ihre Nahrung an, also über Algen und Plankton. Mikroalgen lassen sich heute auch gezielt in Anlagen kultivieren, unabhängig vom Meer. Sie gelten als direkte Quelle für DHA, je nach Algenart auch für EPA.')],
+ th=['','Herkunft','Worauf man achten kann'],rows=[('Wildfang','Freies Meer','Fangmethode und Siegel wie MSC'),('Aquakultur','Zuchtanlage','Betrieb und Siegel wie ASC'),('Mikroalgen','Kultur in Anlagen','Angabe der Algenart und der Menge an DHA'),('Pflanzen','Anbau auf dem Feld','Frische, Lagerung und Herkunftsangabe')],
+ ch='Fünf Fragen zur Herkunft',ci=['Steht auf der Packung, woher der Fisch oder die Alge stammt?','Gibt es ein unabhängiges Siegel, das sich nachschlagen lässt?','Wird zwischen verschiedenen Fischarten abgewechselt?','Ist die Art genannt, also Fischart oder Algenart?','Passen Lagerung und Haltbarkeit zum Produkt?'],
+ bh='Kurz gesagt',bp='Die Herkunft ist ein Kriterium unter mehreren. Wer nachfragt, Siegel prüft und verschiedene Quellen mischt, trifft eine informierte Wahl.',
+ tk='Artikel',th_='Omega-3 und seine <em>Herkunft</em>',tp='Wildfang, Zucht, Algen: woher Omega-3 kommen kann.',tc='Artikel lesen'),
+'fr':dict(slug='omega-3-durable',t='Les oméga-3 et leur origine : pêche, élevage, algues – Fjord',d='Pêche, aquaculture, algues : d’où peuvent venir les oméga-3 et à quoi faire attention concernant l’origine.',
+ k='Article · 3 min de lecture',h='Les oméga-3 et leur <em>origine</em>',lead='Poisson, plante ou algue : les oméga-3 ont toujours une origine. La connaître permet de choisir en connaissance de cause.',
+ secs=[('D’où vient le poisson','Le poisson provient soit de la pêche, soit de l’aquaculture. Les deux peuvent être pratiquées avec plus ou moins de soin. Des labels indépendants comme MSC pour la pêche et ASC pour l’élevage donnent une première indication. Ils ne sont pas une garantie, mais montrent qu’une exploitation fait contrôler certaines normes.'),
+ ('Petits poissons, chaîne courte','Les sardines, les harengs et les maquereaux sont plus petits et se situent plus bas dans la chaîne alimentaire que les grands prédateurs. En alternant entre plusieurs espèces, on répartit aussi la demande sur plus d’une espèce.'),
+ ('Les algues : la source derrière la source','Les poissons accumulent surtout les oméga-3 par leur alimentation, donc via les algues et le plancton. Les microalgues peuvent aujourd’hui aussi être cultivées en installation, indépendamment de la mer. Elles sont considérées comme une source directe de DHA, et selon l’espèce aussi d’EPA.')],
+ th=['','Origine','À quoi faire attention'],rows=[('Pêche','Mer libre','Méthode de pêche et labels comme MSC'),('Aquaculture','Site d’élevage','Exploitation et labels comme ASC'),('Microalgues','Culture en installation','Espèce d’algue et quantité de DHA indiquées'),('Plantes','Culture aux champs','Fraîcheur, conservation et origine indiquée')],
+ ch='Cinq questions sur l’origine',ci=['L’emballage indique-t-il d’où viennent le poisson ou l’algue ?','Existe-t-il un label indépendant que l’on peut vérifier ?','Alterne-t-on entre plusieurs espèces de poisson ?','L’espèce est-elle nommée, poisson ou algue ?','La conservation et la durée de vie conviennent-elles au produit ?'],
+ bh='En bref',bp='L’origine est un critère parmi d’autres. Qui se renseigne, vérifie les labels et varie les sources fait un choix éclairé.',
+ tk='Article',th_='Les oméga-3 et leur <em>origine</em>',tp='Pêche, élevage, algues : d’où peuvent venir les oméga-3.',tc='Lire l’article'),
+'it':dict(slug='omega-3-sostenibile',t='Gli omega-3 e la loro origine: pesca, allevamento, alghe – Fjord',d='Pesca, acquacoltura, alghe: da dove possono arrivare gli omega-3 e a cosa fare attenzione riguardo all’origine.',
+ k='Articolo · 3 min di lettura',h='Gli omega-3 e la loro <em>origine</em>',lead='Pesce, pianta o alga: gli omega-3 hanno sempre un’origine. Conoscerla aiuta a scegliere con più consapevolezza.',
+ secs=[('Da dove viene il pesce','Il pesce proviene dalla pesca oppure dall’acquacoltura. Entrambe possono essere praticate con più o meno cura. Marchi indipendenti come MSC per la pesca e ASC per l’allevamento danno un primo orientamento. Non sono una garanzia, ma indicano che un’azienda fa verificare determinati standard.'),
+ ('Pesci piccoli, filiera corta','Sardine, aringhe e sgombri sono più piccoli e stanno più in basso nella catena alimentare rispetto ai grandi predatori. Alternando più specie si distribuisce anche la domanda su più di una specie.'),
+ ('Le alghe: la fonte dietro la fonte','I pesci accumulano gli omega-3 soprattutto con l’alimentazione, cioè tramite alghe e plancton. Oggi le microalghe si possono anche coltivare in impianti, indipendentemente dal mare. Sono considerate una fonte diretta di DHA e, a seconda della specie, anche di EPA.')],
+ th=['','Origine','A cosa fare attenzione'],rows=[('Pesca','Mare aperto','Metodo di pesca e marchi come MSC'),('Acquacoltura','Impianto di allevamento','Azienda e marchi come ASC'),('Microalghe','Coltura in impianto','Specie di alga e quantità di DHA indicate'),('Piante','Coltivazione in campo','Freschezza, conservazione e origine indicata')],
+ ch='Cinque domande sull’origine',ci=['La confezione indica da dove arrivano il pesce o l’alga?','Esiste un marchio indipendente che si può verificare?','Si alternano diverse specie di pesce?','La specie è indicata, pesce o alga?','Conservazione e scadenza sono adatte al prodotto?'],
+ bh='In breve',bp='L’origine è un criterio tra gli altri. Chi si informa, controlla i marchi e varia le fonti fa una scelta consapevole.',
+ tk='Articolo',th_='Gli omega-3 e la loro <em>origine</em>',tp='Pesca, allevamento, alghe: da dove possono arrivare gli omega-3.',tc='Leggi l’articolo'),
+}
+for _l in AR4:
+    for _k in ('note','back'): AR4[_l][_k]=AR3[_l][_k]
+ARS=[AR,AR2,AR3,AR4]
 NC=[(18,3),(20,5),(22,6)]
 B='https://fjord-omega3.ch'
 for l,c in T.items():

@@ -138,3 +138,4 @@ input[type=range]{width:100%;accent-color:var(--gold);height:6px}
 .lgd span{display:inline-flex;align-items:center;gap:9px}
 .lgd i{display:inline-block}.lgd .ln{width:26px;height:3px;border-radius:3px;background:var(--teal)}.lgd .dt{width:13px;height:13px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
 .meta b{font-size:2.8rem}
+.tz .wrap{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}

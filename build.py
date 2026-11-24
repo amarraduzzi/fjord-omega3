@@ -132,8 +132,39 @@ AR2={
  tk='Articolo',th_='Leggere l’etichetta degli <em>omega-3</em>',tp='Quantità di olio, EPA e DHA, forma, origine: cosa dice davvero la confezione.',tc='Leggi l’articolo'),
 }
 for _l in AR2: AR2[_l]['note'],AR2[_l]['back']=_n[_l]
-ARS=[AR,AR2]
 
+AR3={
+'de':dict(slug='omega3-im-alltag',t='Omega-3 im Alltag: Ideen für den Wochenplan – Fjord',d='Fetter Fisch, Nüsse, Samen, Algen: einfache Ideen, wie Omega-3 im Alltag auf den Teller kommt.',
+ k='Artikel · 3 Min. Lesezeit',h='Omega-3 im <em>Alltag</em>',lead='Es braucht keinen Spezialplan. Mit ein paar festen Gewohnheiten lässt sich eine Ernährung zusammenstellen, die verschiedene Omega-3-Quellen enthält.',
+ secs=[('Das Meer auf dem Teller','Fetter Fisch wie Lachs, Makrele, Sardine, Hering oder Sardellen enthält EPA und DHA. Offizielle Ernährungsempfehlungen nennen häufig ein bis zwei Fischmahlzeiten pro Woche, davon eine mit fettem Fisch. Sardinen aus der Dose sind eine einfache, haltbare Variante.'),
+ ('Pflanzliche Quellen für ALA','Walnüsse, Leinsamen, Chiasamen und Hanfsamen liefern ALA. Geschroteter Leinsamen lässt sich besser verwerten als ganzer, weil die Schale sonst oft unverdaut bleibt. Eine Handvoll Nüsse oder ein Löffel Samen im Müsli oder Joghurt ist eine einfache Möglichkeit, sie regelmässig einzubauen.'),
+ ('Frisch halten, schonend zubereiten','Omega-3-Fettsäuren reagieren empfindlich auf Hitze, Licht und Sauerstoff. Öle wie Leinöl gehören daher in dunkle Flaschen, in den Kühlschrank und eher auf den kalten Salat als in die heisse Pfanne. Fisch gart man am besten schonend, zum Beispiel im Ofen oder gedämpft.')],
+ th=['','Beispiel','Idee für den Alltag'],rows=[('Frühstück','Joghurt oder Haferflocken','Mit Walnüssen oder geschrotetem Leinsamen'),('Mittag','Salat','Mit Walnüssen und einem Dressing aus kaltgepresstem Öl'),('Abendessen','Fisch aus dem Ofen','Lachs oder Makrele, dazu Gemüse'),('Snack','Dose oder Handvoll','Sardinen auf Vollkornbrot oder eine Handvoll Nüsse')],
+ ch='Fünf einfache Gewohnheiten',ci=['Ein bis zwei Fischmahlzeiten pro Woche einplanen','Den Fisch abwechseln: Lachs, Makrele, Sardine, Hering','Nüsse und Samen fest in Frühstück oder Snack einbauen','Empfindliche Öle dunkel und kühl lagern','Ohne Fisch: Algen als direkte Quelle für DHA prüfen'],
+ bh='Kurz gesagt',bp='Abwechslung ist wichtiger als Perfektion. Wer Meer und Pflanze mischt, nutzt verschiedene Quellen. Ob zusätzlich ein Präparat in Frage kommt, hängt von der persönlichen Situation ab.',
+ tk='Artikel',th_='Omega-3 im <em>Alltag</em>',tp='Fisch, Nüsse, Samen, Algen: einfache Ideen für den Wochenplan.',tc='Artikel lesen'),
+'fr':dict(slug='omega-3-au-quotidien',t='Les oméga-3 au quotidien : idées pour la semaine – Fjord',d='Poissons gras, noix, graines, algues : des idées simples pour intégrer les oméga-3 à vos repas.',
+ k='Article · 3 min de lecture',h='Les oméga-3 au <em>quotidien</em>',lead='Pas besoin d’un plan spécial. Quelques habitudes fixes suffisent pour composer une alimentation qui réunit différentes sources d’oméga-3.',
+ secs=[('La mer dans l’assiette','Les poissons gras comme le saumon, le maquereau, la sardine, le hareng ou l’anchois contiennent de l’EPA et du DHA. Les recommandations officielles citent souvent un à deux repas de poisson par semaine, dont un de poisson gras. Les sardines en boîte sont une option simple qui se conserve longtemps.'),
+ ('Les sources végétales d’ALA','Les noix, les graines de lin, de chia et de chanvre apportent de l’ALA. Les graines de lin moulues sont mieux utilisées que les graines entières, dont l’enveloppe reste souvent non digérée. Une poignée de noix ou une cuillère de graines dans le muesli ou le yaourt est une façon simple d’en consommer régulièrement.'),
+ ('Garder frais, cuisiner en douceur','Les oméga-3 sont sensibles à la chaleur, à la lumière et à l’oxygène. Les huiles comme l’huile de lin se conservent donc en bouteille foncée, au réfrigérateur, et s’utilisent plutôt sur une salade froide que dans une poêle chaude. Le poisson se cuit de préférence en douceur, au four ou à la vapeur.')],
+ th=['','Exemple','Idée pour le quotidien'],rows=[('Petit-déjeuner','Yaourt ou flocons d’avoine','Avec des noix ou des graines de lin moulues'),('Midi','Salade','Avec des noix et une vinaigrette à l’huile pressée à froid'),('Dîner','Poisson au four','Saumon ou maquereau, avec des légumes'),('En-cas','Boîte ou poignée','Sardines sur pain complet ou une poignée de noix')],
+ ch='Cinq habitudes simples',ci=['Prévoir un à deux repas de poisson par semaine','Varier les poissons : saumon, maquereau, sardine, hareng','Ajouter noix et graines au petit-déjeuner ou en en-cas','Conserver les huiles sensibles au frais et à l’abri de la lumière','Sans poisson : se renseigner sur les algues comme source directe de DHA'],
+ bh='En bref',bp='La variété compte plus que la perfection. Qui associe mer et végétal exploite plusieurs sources. L’utilité d’un complément en plus dépend de la situation personnelle.',
+ tk='Article',th_='Les oméga-3 au <em>quotidien</em>',tp='Poisson, noix, graines, algues : des idées simples pour la semaine.',tc='Lire l’article'),
+'it':dict(slug='omega-3-ogni-giorno',t='Omega-3 ogni giorno: idee per la settimana – Fjord',d='Pesce azzurro, noci, semi, alghe: idee semplici per portare gli omega-3 in tavola.',
+ k='Articolo · 3 min di lettura',h='Omega-3 di <em>ogni giorno</em>',lead='Non serve un piano speciale. Con poche abitudini fisse si può comporre un’alimentazione che comprende diverse fonti di omega-3.',
+ secs=[('Il mare nel piatto','Pesci grassi come salmone, sgombro, sardina, aringa o acciuga contengono EPA e DHA. Le raccomandazioni ufficiali citano spesso uno o due pasti di pesce a settimana, di cui uno di pesce grasso. Le sardine in scatola sono un’opzione semplice e a lunga conservazione.'),
+ ('Fonti vegetali di ALA','Noci, semi di lino, di chia e di canapa forniscono ALA. Il lino macinato si utilizza meglio di quello intero, il cui involucro spesso resta non digerito. Una manciata di noci o un cucchiaio di semi nel muesli o nello yogurt è un modo semplice per inserirli con regolarità.'),
+ ('Conservare bene, cuocere con delicatezza','Gli omega-3 sono sensibili a calore, luce e ossigeno. Oli come quello di lino vanno quindi in bottiglie scure, in frigorifero, e si usano meglio sull’insalata fredda che in padella. Il pesce si cuoce preferibilmente con delicatezza, al forno o al vapore.')],
+ th=['','Esempio','Idea per ogni giorno'],rows=[('Colazione','Yogurt o fiocchi d’avena','Con noci o lino macinato'),('Pranzo','Insalata','Con noci e un condimento di olio spremuto a freddo'),('Cena','Pesce al forno','Salmone o sgombro, con verdure'),('Spuntino','Scatoletta o manciata','Sardine su pane integrale o una manciata di noci')],
+ ch='Cinque abitudini semplici',ci=['Prevedere uno o due pasti di pesce a settimana','Variare il pesce: salmone, sgombro, sardina, aringa','Inserire noci e semi a colazione o negli spuntini','Conservare gli oli delicati al buio e al fresco','Senza pesce: valutare le alghe come fonte diretta di DHA'],
+ bh='In breve',bp='La varietà conta più della perfezione. Chi unisce mare e vegetale usa fonti diverse. L’utilità di un integratore in più dipende dalla situazione personale.',
+ tk='Articolo',th_='Omega-3 di <em>ogni giorno</em>',tp='Pesce, noci, semi, alghe: idee semplici per la settimana.',tc='Leggi l’articolo'),
+}
+for _l in AR3: AR3[_l]['note'],AR3[_l]['back']=_n[_l]
+
+ARS=[AR,AR2,AR3]
 NC=[(18,3),(20,5),(22,6)]
 B='https://fjord-omega3.ch'
 for l,c in T.items():

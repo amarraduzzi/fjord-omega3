@@ -221,3 +221,13 @@ input[type=range]{width:100%;accent-color:var(--gold);height:6px}
 .cta2{display:inline-flex;align-items:center;padding:14px 28px;border-radius:99px;border:1px solid rgba(240,192,96,.55);color:var(--gold);font-weight:600;background:rgba(240,192,96,.06);backdrop-filter:blur(6px);transition:.3s}.cta2:hover{background:rgba(240,192,96,.16);transform:translateY(-3px)}
 .pano .pl{position:absolute;z-index:2;left:50%;bottom:9%;transform:translateX(-50%);white-space:nowrap;padding:10px 22px;border-radius:99px;border:1px solid rgba(255,255,255,.35);color:#fff;font-size:.92rem;background:rgba(2,8,18,.35);backdrop-filter:blur(6px);transition:.3s}.pano .pl:hover{border-color:var(--gold);color:var(--gold)}
 @media(max-width:600px){.ctas{flex-direction:column;gap:12px}.ctas a{width:100%;max-width:300px;justify-content:center}.pano .pl{bottom:6%}}
+
+.ck{padding:96px 0}.ckb{margin:34px auto 0;max-width:640px;padding:34px 28px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(63,208,201,.07),rgba(240,192,96,.05));text-align:center}
+.cdots{display:flex;gap:8px;justify-content:center;margin-bottom:22px}.cdots i{width:34px;height:4px;border-radius:4px;background:var(--line);transition:.3s}.cdots i.d{background:var(--gold)}
+.cq small{display:block;color:var(--teal);letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;margin-bottom:10px}.cq b{display:block;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(1.4rem,3.4vw,1.9rem);margin-bottom:24px}
+.co{display:grid;gap:10px}.co button{font:inherit;color:var(--ink);padding:15px 18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);cursor:pointer;transition:.25s}.co button:hover{border-color:var(--gold);background:rgba(240,192,96,.08);transform:translateY(-2px)}
+.cr h3{font-family:'Newsreader',serif;font-style:italic;font-weight:400;font-size:clamp(1.9rem,5vw,2.6rem);color:var(--gold);margin:6px 0 10px}.cr p{color:var(--mute);max-width:480px;margin:0 auto 24px}
+.cf2{display:flex;flex-direction:column;align-items:center;gap:14px}.cf2 .cs{color:var(--mute);font-size:.85rem;order:-1;margin-bottom:-8px}.cf2 .cl{order:-1;color:var(--teal);border-bottom:1px solid rgba(63,208,201,.35)}.cf2 .cl:hover{color:var(--gold)}
+.cagain{font:inherit;background:none;border:0;color:var(--mute);cursor:pointer;text-decoration:underline;font-size:.88rem}
+.cf2[hidden],.cr[hidden],.cq[hidden]{display:none}
+.cf2 .cs{order:-2!important}

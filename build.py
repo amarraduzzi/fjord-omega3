@@ -1,3 +1,4 @@
+import re,os
 T={'de':dict(t='Fjord – Omega-3, tief erklärt',d='Unabhängiges Wissen über Omega-3-Fettsäuren: was sie sind, wo sie vorkommen und was die Forschung sagt.',nav=['Fettsäuren','Quellen','Forschung','FAQ'],eb='Unabhängiges Omega-3-Wissen',h='Tauche ein in die <em>Tiefe</em> von Omega-3',s='Was sind ALA, EPA und DHA, woher kommen sie – und was sagt die Forschung wirklich? Klar erklärt, ohne Versprechen.',cta='Reise beginnen',st=['Fettsäuren','Quellen','Forschungsfragen'],mq=['ALA · EPA · DHA','Meer & Pflanze','Was die Forschung sagt','Klar statt Werbung','Wissen aus der Tiefe']),
 'fr':dict(t='Fjord – Les oméga-3, en profondeur',d='Un savoir indépendant sur les acides gras oméga-3 : ce qu’ils sont, où les trouver et ce que dit la recherche.',nav=['Acides gras','Sources','Recherche','FAQ'],eb='Savoir oméga-3 indépendant',h='Plongez dans les <em>profondeurs</em> des oméga-3',s='Que sont l’ALA, l’EPA et le DHA, d’où viennent-ils – et que dit vraiment la recherche ? Expliqué simplement, sans promesses.',cta='Commencer le voyage',st=['Acides gras','Sources','Questions de recherche'],mq=['ALA · EPA · DHA','Mer & plantes','Ce que dit la recherche','Clair, pas publicitaire','Le savoir des profondeurs']),
 'it':dict(t='Fjord – Gli omega-3, in profondità',d='Conoscenza indipendente sugli acidi grassi omega-3: cosa sono, dove si trovano e cosa dice la ricerca.',nav=['Acidi grassi','Fonti','Ricerca','FAQ'],eb='Sapere omega-3 indipendente',h='Immergiti nelle <em>profondità</em> degli omega-3',s='Cosa sono ALA, EPA e DHA, da dove arrivano – e cosa dice davvero la ricerca? Spiegato chiaramente, senza promesse.',cta='Inizia il viaggio',st=['Acidi grassi','Fonti','Domande di ricerca'],mq=['ALA · EPA · DHA','Mare & piante','Cosa dice la ricerca','Chiaro, non pubblicità','Sapere dalle profondità'])}
@@ -56,6 +57,39 @@ R={'de':dict(k='Forschung',h='Was die Forschung <em>wirklich</em> sagt',p='Vier 
  ('L’olio di alghe è un’alternativa al pesce?','Le microalghe producono da sole DHA e a volte EPA. I pesci li assumono tramite le alghe. L’olio di alghe è quindi una fonte vegetale.'),
  ('Ho bisogno di un integratore?','Dipende dalla tua alimentazione. Chi mangia regolarmente pesce grasso spesso copre il valore di riferimento a tavola. In caso di dubbio chiedi a un medico o a un dietista.')],
  ft='Fjord è un sito informativo indipendente. I contenuti sono generali e non sostituiscono consulto, diagnosi o cura medica.')}
+AR={
+'de':dict(slug='algenoel-vs-fischoel',t='Algenöl oder Fischöl? Die Unterschiede erklärt – Fjord',d='Algenöl und Fischöl im Vergleich: Herkunft, Zusammensetzung und worauf man beim Vergleich achten kann. Sachlich erklärt, ohne Versprechen.',
+ k='Artikel · 4 Min. Lesezeit',h='Algenöl oder <em>Fischöl</em>?',lead='Beide liefern die langkettigen Omega-3-Fettsäuren EPA und DHA. Der Unterschied liegt vor allem in Herkunft, Zusammensetzung und dem, worauf man beim Vergleich achten kann.',
+ secs=[('Woher kommt das Omega-3?','Fische nehmen EPA und DHA über die Nahrungskette auf – am Anfang dieser Kette stehen Mikroalgen. Fischöl wird aus dem Fettgewebe von Fischen wie Makrele, Sardine oder Hering gewonnen. Algenöl stammt direkt aus Mikroalgen, die in kontrollierten Tanks wachsen. Der Umweg über den Fisch entfällt.'),
+ ('Was steckt drin?','Fischöl enthält in der Regel EPA und DHA, in je nach Fischart unterschiedlichem Verhältnis. Bei Algenöl kommt es auf den verwendeten Algenstamm an: Viele Produkte enthalten vor allem DHA, andere zusätzlich EPA. Die tatsächliche Menge steht auf der Verpackung und unterscheidet sich von Produkt zu Produkt. Deshalb lohnt der Blick aufs Etikett mehr als der Blick auf die Produktart.'),
+ ('Pflanzliches ALA ist etwas anderes','ALA aus Leinsamen, Chia oder Walnüssen ist eine kurzkettige Omega-3-Fettsäure. Der Körper kann sie nur in begrenztem Mass in EPA und DHA umwandeln. Algenöl ist deshalb keine Variante von ALA, sondern liefert EPA und DHA direkt.')],
+ th=['','Algenöl','Fischöl'],rows=[('Ursprung','Mikroalgen aus Tanks','Fettgewebe von Fischen'),('Enthält','DHA, teils auch EPA','EPA und DHA'),('Vegan geeignet','Ja','Nein'),('Gehalt','Je nach Algenstamm und Produkt','Je nach Fischart und Produkt')],
+ ch='Worauf du beim Vergleich achten kannst',ci=['EPA- und DHA-Menge pro Tagesportion, nicht nur „Omega-3 gesamt“','Form des Öls (zum Beispiel Triglycerid oder Ethylester)','Reinheit: Prüfberichte unabhängiger Labore','Frische: Verpackung, Haltbarkeit, Antioxidantien','Ernährungsform und Allergene (Fisch, vegan)','Preis pro Portion EPA und DHA, nicht pro Packung'],
+ bh='Und was ist „besser“?',bp='Eine allgemeingültige Antwort gibt es nicht. Wer keinen Fisch isst, findet in Algenöl eine direkte Quelle für EPA und DHA. Wer Fisch mag, kann beide auch über Mahlzeiten aufnehmen. Ob ein Präparat sinnvoll ist, hängt von Ernährung und persönlicher Situation ab. Eine Fachperson kann das einordnen.',
+ note='Dieser Artikel dient der allgemeinen Information. Er ersetzt keine ärztliche Beratung, Diagnose oder Behandlung.',back='← Zurück zu Fjord',
+ tk='Artikel',th_='Algenöl <em>oder</em> Fischöl?',tp='Zwei Quellen für EPA und DHA im Vergleich: Herkunft, Zusammensetzung und worauf man achten kann.',tc='Artikel lesen'),
+'fr':dict(slug='huile-algues-vs-huile-poisson',t='Huile d’algues ou huile de poisson ? Les différences – Fjord',d='Huile d’algues et huile de poisson comparées : origine, composition et points à vérifier. Expliqué simplement, sans promesses.',
+ k='Article · 4 min de lecture',h='Huile d’algues ou <em>huile de poisson</em> ?',lead='Toutes deux apportent les oméga-3 à longue chaîne EPA et DHA. La différence tient surtout à l’origine, à la composition et aux points à vérifier lors d’une comparaison.',
+ secs=[('D’où viennent ces oméga-3 ?','Les poissons absorbent l’EPA et le DHA par la chaîne alimentaire, qui commence par des microalgues. L’huile de poisson est extraite des tissus gras de poissons comme le maquereau, la sardine ou le hareng. L’huile d’algues provient directement de microalgues cultivées en cuves contrôlées. L’étape du poisson disparaît.'),
+ ('Que contiennent-elles ?','L’huile de poisson contient en général de l’EPA et du DHA, dans des proportions variables selon l’espèce. Pour l’huile d’algues, tout dépend de la souche utilisée : beaucoup de produits contiennent surtout du DHA, d’autres aussi de l’EPA. La quantité réelle figure sur l’emballage et varie d’un produit à l’autre. L’étiquette compte donc davantage que le type de produit.'),
+ ('L’ALA végétal, c’est autre chose','L’ALA des graines de lin, du chia ou des noix est un oméga-3 à chaîne courte. Le corps ne le transforme qu’en quantité limitée en EPA et en DHA. L’huile d’algues n’est donc pas une version de l’ALA : elle apporte directement de l’EPA et du DHA.')],
+ th=['','Huile d’algues','Huile de poisson'],rows=[('Origine','Microalgues cultivées en cuves','Tissus gras de poissons'),('Contient','DHA, parfois aussi EPA','EPA et DHA'),('Convient aux vegans','Oui','Non'),('Teneur','Selon la souche et le produit','Selon l’espèce et le produit')],
+ ch='Points à vérifier pour comparer',ci=['Quantité d’EPA et de DHA par portion quotidienne, pas seulement « oméga-3 total »','Forme de l’huile (par exemple triglycéride ou ester éthylique)','Pureté : rapports d’analyses de laboratoires indépendants','Fraîcheur : emballage, durée de conservation, antioxydants','Régime et allergènes (poisson, vegan)','Prix par portion d’EPA et de DHA, pas par boîte'],
+ bh='Et laquelle est « meilleure » ?',bp='Il n’y a pas de réponse universelle. Qui ne mange pas de poisson trouve dans l’huile d’algues une source directe d’EPA et de DHA. Qui aime le poisson peut aussi les apporter par les repas. L’utilité d’un complément dépend de l’alimentation et de la situation personnelle. Un professionnel de santé peut aider à y voir clair.',
+ note='Cet article est à visée d’information générale. Il ne remplace ni un avis médical, ni un diagnostic, ni un traitement.',back='← Retour à Fjord',
+ tk='Article',th_='Huile d’algues <em>ou</em> huile de poisson ?',tp='Deux sources d’EPA et de DHA comparées : origine, composition et points à vérifier.',tc='Lire l’article'),
+'it':dict(slug='olio-alghe-vs-olio-pesce',t='Olio di alghe o olio di pesce? Le differenze – Fjord',d='Olio di alghe e olio di pesce a confronto: origine, composizione e cosa controllare. Spiegato in modo chiaro, senza promesse.',
+ k='Articolo · 4 min di lettura',h='Olio di alghe o <em>olio di pesce</em>?',lead='Entrambi forniscono gli omega-3 a catena lunga EPA e DHA. La differenza sta soprattutto nell’origine, nella composizione e in ciò che conviene controllare nel confronto.',
+ secs=[('Da dove arrivano questi omega-3?','I pesci assumono EPA e DHA attraverso la catena alimentare, che parte dalle microalghe. L’olio di pesce si ricava dai tessuti grassi di pesci come sgombro, sardina o aringa. L’olio di alghe proviene direttamente da microalghe coltivate in vasche controllate. Il passaggio attraverso il pesce non c’è.'),
+ ('Cosa contengono?','L’olio di pesce contiene in genere EPA e DHA, in proporzioni diverse a seconda della specie. Per l’olio di alghe conta il ceppo usato: molti prodotti contengono soprattutto DHA, altri anche EPA. La quantità reale è indicata sulla confezione e cambia da prodotto a prodotto. Per questo conta più l’etichetta che il tipo di prodotto.'),
+ ('L’ALA vegetale è un’altra cosa','L’ALA di semi di lino, chia e noci è un omega-3 a catena corta. Il corpo lo trasforma in EPA e DHA solo in misura limitata. L’olio di alghe quindi non è una variante dell’ALA: fornisce direttamente EPA e DHA.')],
+ th=['','Olio di alghe','Olio di pesce'],rows=[('Origine','Microalghe coltivate in vasche','Tessuti grassi dei pesci'),('Contiene','DHA, a volte anche EPA','EPA e DHA'),('Adatto ai vegani','Sì','No'),('Contenuto','Secondo il ceppo e il prodotto','Secondo la specie e il prodotto')],
+ ch='Cosa controllare nel confronto',ci=['Quantità di EPA e DHA per porzione giornaliera, non solo «omega-3 totali»','Forma dell’olio (ad esempio trigliceride o estere etilico)','Purezza: rapporti di analisi di laboratori indipendenti','Freschezza: confezione, durata, antiossidanti','Regime alimentare e allergeni (pesce, vegano)','Prezzo per porzione di EPA e DHA, non per confezione'],
+ bh='E quale è «meglio»?',bp='Non esiste una risposta valida per tutti. Chi non mangia pesce trova nell’olio di alghe una fonte diretta di EPA e DHA. Chi ama il pesce può assumerli anche con i pasti. L’utilità di un integratore dipende dall’alimentazione e dalla situazione personale. Un professionista della salute può aiutare a valutare.',
+ note='Questo articolo ha scopo di informazione generale. Non sostituisce consulto, diagnosi o cura medica.',back='← Torna a Fjord',
+ tk='Articolo',th_='Olio di alghe <em>o</em> olio di pesce?',tp='Due fonti di EPA e DHA a confronto: origine, composizione e cosa controllare.',tc='Leggi l’articolo'),
+}
+
 NC=[(18,3),(20,5),(22,6)]
 B='https://fjord-omega3.ch'
 for l,c in T.items():
@@ -80,7 +114,8 @@ for l,c in T.items():
     q=R[l];det=lambda it,c:''.join(f'<details class="{c} rv"><summary>{a}</summary><p>{b}</p></details>' for a,b in it)
     research='<section id="research" class="res-sec"><div class="wrap"><span class="eyebrow">'+q['k']+'</span><h2>'+q['h']+'</h2><p class="sub">'+q['p']+'</p><div class="acc">'+det(q['r'],'ac')+'</div></div></section>'
     faq='<section id="faq" class="res-sec faq"><div class="wrap"><span class="eyebrow">'+q['fk']+'</span><h2>'+q['fh']+'</h2><div class="acc">'+det(q['f'],'ac')+'</div></div></section>'
-    foot='<footer class="foot"><div class="wrap"><a class="logo" href="/'+l+'/"><i></i>FJORD</a><p>'+q['ft']+'</p><div class="lang">'+lang+'</div></div></footer>'
+    ar=AR[l];teaser=f'<section id="artikel" class="tz"><div class="wrap"><a class="tzc rv" href="/{l}/{ar["slug"]}/"><span class="eyebrow">{ar["tk"]}</span><h2>{ar["th_"]}</h2><p>{ar["tp"]}</p><span class="cta">{ar["tc"]} →</span></a></div></section>'
+    foot='<footer class="foot"><div class="wrap"><a class="logo" href="/'+l+'/"><i></i>FJORD</a><a class="flink" href="/'+l+'/'+ar['slug']+'/">'+ar['tk']+': '+re.sub('<.*?>','',ar['th_'])+'</a><p>'+q['ft']+'</p><div class="lang">'+lang+'</div></div></footer>'
     open(f'{l}/index.html','w',encoding='utf-8').write(f'''<!doctype html><html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{c['t']}</title><meta name="description" content="{c['d']}"><link rel="canonical" href="{B}/{l}/">{alt}
 <meta property="og:title" content="{c['t']}"><meta property="og:description" content="{c['d']}"><meta property="og:image" content="{B}/assets/img/og.jpg">
@@ -91,4 +126,38 @@ for l,c in T.items():
 <main><section class="hero"><canvas id="sea"></canvas><div class="in">
 <span class="eyebrow rv">{c['eb']}</span><h1 class="rv">{c['h']}</h1><p class="sub rv">{c['s']}</p><a class="cta rv" href="#acids">{c['cta']} ↓</a>
 <div class="stats rv"><div><b data-count="3">0</b><span>{c['st'][0]}</span></div><div><b data-count="3">0</b><span>{c['st'][1]}</span></div><div><b data-count="4">0</b><span>{c['st'][2]}</span></div></div></div><div class="scroll"></div></section>
-<div class="band"><div>{mq}</div></div>{acids}{sources}{research}{faq}</main>{foot}</body></html>''')
+<div class="band"><div>{mq}</div></div>{acids}{sources}{teaser}{research}{faq}</main>{foot}</body></html>''')
+
+
+# ---- Artikelseiten ----
+def alt_art(k):
+    return ''.join(f'<link rel="alternate" hreflang="{x}" href="{B}/{x}/{AR[x]["slug"]}/">' for x in AR)+f'<link rel="alternate" hreflang="x-default" href="{B}/de/{AR["de"]["slug"]}/">'
+for l,c in T.items():
+    a=AR[l];q=R[l]
+    nav=''.join(f'<a href="/{l}/#{i}">{n}</a>' for i,n in zip(['acids','sources','research','faq'],c['nav']))
+    lang=''.join(f'<a href="/{k}/{AR[k]["slug"]}/" class="{"on" if k==l else ""}" hreflang="{k}">{k.upper()}</a>' for k in T)
+    secs=''.join(f'<h2 class="rv">{h}</h2><p class="rv">{p}</p>' for h,p in a['secs'][:3])
+    table='<div class="cmpw rv"><table class="cmp"><thead><tr>'+''.join(f'<th>{x}</th>' for x in a['th'])+'</tr></thead><tbody>'+''.join('<tr><th scope="row">'+r[0]+'</th><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>' for r in a['rows'])+'</tbody></table></div>'
+    checks='<h2 class="rv">'+a['ch']+'</h2><ul class="chk rv">'+''.join(f'<li>{i}</li>' for i in a['ci'])+'</ul>'
+    foot='<footer class="foot"><div class="wrap"><a class="logo" href="/'+l+'/"><i></i>FJORD</a><p>'+q['ft']+'</p><div class="lang">'+lang+'</div></div></footer>'
+    url=f'{B}/{l}/{a["slug"]}/'
+    os.makedirs(f'{l}/{a["slug"]}',exist_ok=True)
+    open(f'{l}/{a["slug"]}/index.html','w',encoding='utf-8').write(f'''<!doctype html><html lang="{l}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{a['t']}</title><meta name="description" content="{a['d']}"><link rel="canonical" href="{url}">{alt_art(l)}
+<meta property="og:type" content="article"><meta property="og:title" content="{a['t']}"><meta property="og:description" content="{a['d']}"><meta property="og:image" content="{B}/assets/img/og.jpg">
+<link rel="icon" href="/assets/fjord.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css"><script src="/assets/fjord.js" defer></script></head><body class="art-page">
+<header class="nav solid"><a class="logo" href="/{l}/"><i></i>FJORD</a><nav class="menu">{nav}<div class="lang">{lang}</div></nav></header>
+<main><section class="art-hero"><div class="in"><a class="back" href="/{l}/">{a['back']}</a><span class="eyebrow">{a['k']}</span><h1>{a['h']}</h1><p class="sub">{a['lead']}</p></div></section>
+<article class="art"><div class="in">{secs}{table}{checks}<h2 class="rv">{a['bh']}</h2><p class="rv">{a['bp']}</p><p class="note rv">{a['note']}</p></div></article></main>{foot}</body></html>''')
+
+# sitemap
+urls=[f'{B}/{k}/' for k in T]+[f'{B}/{k}/{AR[k]["slug"]}/' for k in AR]
+def xl(group):
+    return ''.join(f'<xhtml:link rel="alternate" hreflang="{k}" href="{u}"/>' for k,u in group)
+home=[(k,f'{B}/{k}/') for k in T];art=[(k,f'{B}/{k}/{AR[k]["slug"]}/') for k in AR]
+sm='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'
+for g in (home,art):
+    for k,u in g: sm+=f'<url><loc>{u}</loc>{xl(g)}</url>'
+open('sitemap.xml','w',encoding='utf-8').write(sm+'</urlset>')

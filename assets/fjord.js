@@ -24,3 +24,10 @@ tb.forEach(b=>b.addEventListener('click',()=>{tb.forEach(k=>k.classList.toggle('
 const cf=document.getElementById('cf'),cp=document.getElementById('cp'),box=document.querySelector('.cbox'),nf=new Intl.NumberFormat(box.dataset.lg,{maximumFractionDigits:2}),REF=1.75;
 const up=()=>{const t=+cf.value*+cp.value;document.getElementById('cn').textContent=cp.value;document.getElementById('cv').textContent=nf.format(t);const p=Math.round(t/REF*100);document.getElementById('cpct').textContent=p;document.getElementById('cgb').style.width=Math.min(100,p)+'%'};
 cf.addEventListener('change',up);cp.addEventListener('input',up);new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){up();o.disconnect()}},{threshold:.4}).observe(box)})();
+(()=>{const T=document.querySelector('.tl');if(T){const tiles=[...T.querySelectorAll('.tile')],wd=[...T.querySelectorAll('.wd')],msg=T.querySelector('.tmsg'),M=msg.dataset.m.split('|');
+const up=()=>{let w=0;wd.forEach((d,i)=>{const all=tiles.filter(t=>+t.dataset.w===i),on=all.filter(t=>t.classList.contains('on')).length;d.querySelector('b').style.width=(on/all.length*100)+'%';d.querySelector('em').textContent=on+'/'+all.length;d.classList.toggle('full',on>0);if(on)w++});msg.textContent=M[w];T.classList.toggle('w3',w===3)};
+tiles.forEach(t=>t.addEventListener('click',()=>{const o=t.classList.toggle('on');t.setAttribute('aria-pressed',o);up()}))}
+document.querySelectorAll('.mc').forEach(c=>c.addEventListener('click',()=>{const o=c.classList.toggle('flip');c.setAttribute('aria-pressed',o)}));
+document.querySelectorAll('.chk.tick').forEach(ul=>{const box=ul.nextElementSibling,N=+box.dataset.n,bar=box.querySelector('.bar i'),sp=box.querySelector('span'),dn=box.querySelector('p'),li=[...ul.children];
+const up=()=>{const n=li.filter(x=>x.classList.contains('ok')).length;bar.style.width=(n/N*100)+'%';sp.textContent=n+' / '+N;dn.hidden=n<N};
+li.forEach(x=>{const f=()=>{const o=x.classList.toggle('ok');x.setAttribute('aria-checked',o);up()};x.addEventListener('click',f);x.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();f()}})})})})();

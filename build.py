@@ -1,5 +1,5 @@
 import re,os
-MAIN='https://molitademo1.pages.dev'
+MAIN='https://molitademo2.pages.dev'
 LG={'de':('Kohlenstoffkette','Doppelbindung'),'fr':('Chaîne de carbones','Double liaison'),'it':('Catena di carbonio','Doppio legame')}
 PANO={'de':'Alles beginnt im Meer.','fr':'Tout commence dans la mer.','it':'Tutto comincia nel mare.'}
 CI=['ala','epa','dha']
